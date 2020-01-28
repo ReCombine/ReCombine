@@ -1,12 +1,12 @@
 name: PublishDocumentation
 
 on: 
-  release:
-    types: [published]
+  push:
+    tags: '*.*.*'
 
 jobs:
   deploy_docs:
-    runs-on: macos
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v1
     - name: Publish Jazzy Docs
