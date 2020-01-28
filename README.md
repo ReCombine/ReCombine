@@ -2,6 +2,8 @@
 
 **Simple. Performant. Native.**
 
+![Swift](https://github.com/ReCombine/ReCombine/workflows/Swift/badge.svg?branch=master)
+
 A Swift Redux Library utilizing Apple's Combine Framework.
 
 ## Documentation
