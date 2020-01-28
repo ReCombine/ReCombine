@@ -13,11 +13,11 @@ See the full documentation on [ReCombine.io](https://recombine.io)
 ## Why ReCombine?
 
 - **Simple**
-   - 📈 [Combine reducers](./reducers.html) makes scaling easy.
-   - 🤝 [Side Effects](./effects.html) allow abstraction of asynchronous calls. 
+   - 📈 [Combine reducers](https://recombine.io/Reducer%20Composition%20Helpers.html#/s:9ReCombine15combineReducersyxx_AA6Action_ptcxx_AaC_ptcd_tlF) makes scaling easy.
+   - 🤝 [Side Effects](https://recombine.io/effects.html) allow abstraction of asynchronous calls. 
 - **Performant** 
    - 💨 Uses Combine, boosting performance in comparison to Redux libraries that use RxSwift.
-   - 🦁 Implements performance optimizations for you, including [memoized selectors](./selectors.html).
+   - 🦁 Implements performance optimizations for you, including [memoized selectors](https://recombine.io/selectors.html).
 - **Native** 
    - 📲 Interacts seemlessly with SwiftUI.
    - 🛠 Only depends on Combine under the hood.
