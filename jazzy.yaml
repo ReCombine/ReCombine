@@ -1,0 +1,50 @@
+module: ReCombine
+documentation: docs-source/*.md
+author: John Crowson
+author_url: http://johncrowson.com
+github_url: https://github.com/ReCombine/ReCombine
+hide_documentation_coverage: true
+copyright: Documentation modified from [NgRx.io](https://ngrx.io) under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/).
+custom_categories:
+- name: Guide - Basics
+  children:
+  - Introduction
+  - Installation
+  - Getting Started
+- name: Guide - Architecture
+  children:
+  - Actions
+  - Reducers
+  - Selectors
+  - Effects
+- name: Key Structures and Protocols
+  children:
+  - Store
+  - Action
+  - Effect
+- name: Reducer Composition Helpers
+  children:
+  - combineReducers(_:)
+  - forKey(_:use:)
+- name: Memoized Selectors
+  children:
+  - createSelector(_:transformation:memoized:)
+  - createSelector(_:_:transformation:memoized:)
+  - createSelector(_:_:_:transformation:memoized:)
+  - createSelector(_:_:_:_:transformation:memoized:)
+  - createSelector(_:_:_:_:_:transformation:memoized:)
+  - createSelector(_:_:_:_:_:_:transformation:memoized:)
+  - createSelector(_:_:_:_:_:_:_:transformation:memoized:)
+  - createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)
+  - createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)
+- name: Custom Operators
+  children:
+  - Publisher
+  - AnyPublisher
+- name: Testing
+  children:
+  - MockStore
+- name: Aliases
+  children:
+  - ReducerFn
+  - SelectorFn
