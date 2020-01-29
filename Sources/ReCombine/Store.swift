@@ -147,7 +147,7 @@ open class Store<S>: Publisher {
     }
 
     /// Publisher protocol - use the internal stateSubject under the hood :nodoc:
-    public func receive<T>(subscriber: T) where T: Subscriber, Failure == T.Failure, Output == T.Input {
+    open func receive<T>(subscriber: T) where T: Subscriber, Failure == T.Failure, Output == T.Input {
         stateSubject.receive(subscriber: subscriber)
     }
     
