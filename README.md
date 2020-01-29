@@ -1,5 +1,7 @@
 # ReCombine
 
+![ReCombine Logo](https://recombine.io/img/recombine_logo.png)
+
 **Simple. Performant. Native.**
 
 ![Swift](https://github.com/ReCombine/ReCombine/workflows/Swift/badge.svg?branch=master)
