@@ -19,5 +19,6 @@ let package = Package(
         .target(name: "ReCombine", dependencies: []),
         .testTarget(name: "ReCombineTests", dependencies: ["ReCombine"]),
         .target(name: "ReCombineTest", dependencies: ["ReCombine"]),
+        .testTarget(name: "ReCombineTestTests", dependencies: ["ReCombineTest"]),
     ]
 )
