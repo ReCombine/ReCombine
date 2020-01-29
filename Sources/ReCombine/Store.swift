@@ -126,9 +126,6 @@ open class Store<S>: Publisher {
         _state = reducer(_state, action)
         stateSubject.send(_state)
         actionSubject.send(action)
-        if devTools.enabled {
-            devTools.add(state: _state, action: action)
-        }
     }
 
     /// Returns derived data from the application state based on a given selector function.
@@ -185,7 +182,8 @@ open class Store<S>: Publisher {
     func register(_ effect: Effect) -> AnyCancellable {
         return effect.source(actionSubject.eraseToAnyPublisher())
             .filter { _ in return effect.dispatch }
-            .sink(receiveValue: { action in dispatch(action: action) })
+            .sink(receiveValue: { [weak self] action in self?.dispatch(action: action) })
+    }
 }
 
 /// Mock `Store` for testing that allows updating the `Store` to a specific state without dispatching actions.
