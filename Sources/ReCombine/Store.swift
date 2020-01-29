@@ -95,13 +95,10 @@ open class Store<S>: Publisher {
     private var cancellableSet: Set<AnyCancellable> = []
     private let reducer: ReducerFn<S>
 
-    let devTools = StoreDevTools<S>()
-
-
     /// Creates a new Store.
     /// - Parameter reducer: a single reducer function which will handle reducing state for all actions dispatched to the store.
     /// - Parameter initialState: the initial state.  This state will be used by consumers before the first action is dispatched.
-    /// - Parameter effects: action based side-effects.
+    /// - Parameter effects: action based side-effects.  Each `Effect` element is processed for the lifetime of the `Store` instance.
     public init(reducer: @escaping ReducerFn<S>, initialState: S, effects: [Effect] = []) {
         self.reducer = reducer
         _state = initialState
@@ -110,7 +107,7 @@ open class Store<S>: Publisher {
 
         for effect in effects {
             effect.source(actionSubject.eraseToAnyPublisher())
-                .filter({ _ in return effect.dispatch })
+                .filter { _ in return effect.dispatch }
                 .sink(receiveValue: { action in self.dispatch(action: action)})
                 .store(in: &cancellableSet)
         }
@@ -156,6 +153,39 @@ open class Store<S>: Publisher {
     public func receive<T>(subscriber: T) where T: Subscriber, Failure == T.Failure, Output == T.Input {
         stateSubject.receive(subscriber: subscriber)
     }
+    
+    /// Registers an effect that processes from when this function is called until the returned `AnyCancellable` instance in cancelled.
+    ///
+    /// This can be useful for:
+    /// 1. Effects that should not process for the entire lifetime of the `Store` instance.
+    /// 2. Effects that need to capture a particular scope in it's `source` closure.
+    ///
+    /// The following SwiftUI example shows these uses:
+    /// 1. Processing the `showAlert` `Effect` for the lifetime of the `Model` only.  This is done by storing the returned `AnyCancellable` instance in `cancellableSet`.  Because `cancellableSet` is a instance of `Set<AnyCancellable>`, it will automatically call `cancel()` when on each element when `Model` is deinitialized.
+    /// 2. Capturing `self` inside the `showAlert` Effect's source closure.
+    /// ```
+    /// class Model: ObservableObject {
+    ///     @Published var showAlert: Bool = false
+    ///     private var cancellableSet: Set<AnyCancellable> = []
+    ///
+    ///     init(store: Store<GetPostError>) {
+    ///         let showAlertOnError = Effect(dispatch: false) { actions in
+    ///             actions.ofType(GetPostError.self)
+    ///                 .handleEvents(receiveOutput: { [weak self] _ in
+    ///                     self?.showAlert = true
+    ///                 })
+    ///                 .eraseActionType()
+    ///                 .eraseToAnyPublisher()
+    ///         }
+    ///         store.register(showAlertOnError)
+    ///     }
+    /// }
+    /// ```
+    /// - Parameter effect: action based side-effect.  It is processed until the returned `AnyCancellable` instance is cancelled.
+    func register(_ effect: Effect) -> AnyCancellable {
+        return effect.source(actionSubject.eraseToAnyPublisher())
+            .filter { _ in return effect.dispatch }
+            .sink(receiveValue: { action in dispatch(action: action) })
 }
 
 /// Mock `Store` for testing that allows updating the `Store` to a specific state without dispatching actions.
@@ -191,27 +221,5 @@ open class MockStore<S>: Store<S> {
     public func setState(_ state: S) {
         self._state = state
         self.stateSubject.send(state)
-    }
-}
-
-class StoreDevTools<S> {
-    internal var enabled: Bool
-    private var _history: [(state: S, action: Action)]
-
-    init() {
-        enabled = false
-        _history = []
-    }
-
-    var history: [(state: S, action: Action)] {
-        return _history
-    }
-
-    func enable(_ toEnable: Bool) {
-        enabled = toEnable
-    }
-
-    internal func add(state: S, action: Action) {
-        _history.append((state, action))
     }
 }
