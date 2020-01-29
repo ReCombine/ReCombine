@@ -4,11 +4,13 @@ Effects are a Combine powered side effect model. Effects use streams to provide 
 
 ## Introduction
 
-In many iOS applications, view controllers or their dependencies (view models, data managers) are responsible for interacting with external resources directly. Instead, effects provide a way to interact with those services and isolate them from the view controllers. Effects are where you handle tasks such as fetching data, long-running tasks that produce multiple events, and other external interactions where your view controllers don't need explicit knowledge of these interactions.
+In many iOS applications, view controllers or their dependencies (view models, data managers) are responsible for interacting with external resources directly. Instead, effects provide a way to interact with those resources and isolate them from the view controllers.
+
+Effects are where you handle tasks such as fetching data, long-running tasks that produce multiple events, and other external interactions where your view controllers don't need explicit knowledge of these interactions.
 
 ## Key Concepts
 
-- Effects isolate side effects from view controllers, allowing for more _pure_ view controllers that select state and dispatch actions.
+- Effects isolate side effects from view controllers or view models, allowing for more _pure_ view controllers or view models that select state and dispatch actions.
 - Effects are long-running Subscribers that listen to a Publisher of _every_ action dispatched from the [Store](guide/store).
 - Effects filter those actions based on the type of action they are interested in.
 - Effects perform tasks, which are synchronous or asynchronous and return a new action.
@@ -70,8 +72,12 @@ class PostDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         store.dispatch(action: PostDetailsView.GetPost(id: postId))
-        store.select(selectPostDetailsTitle).assign(to: \.text, on: titleLabel).store(in: &cancellableSet)
-        store.select(selectPostDetailsBody).assign(to: \.text, on: bodyLabel).store(in: &cancellableSet)
+        store.select(selectPostDetailsTitle)
+            .assign(to: \.text, on: titleLabel)
+            .store(in: &cancellableSet)
+        store.select(selectPostDetailsBody)
+            .assign(to: \.text, on: bodyLabel)
+            .store(in: &cancellableSet)
     }
 }
 ```
@@ -133,7 +139,11 @@ You'll notice the specific `DeleteDocument` action had to be type erased using `
 
 ## Registering effects
 
-After you've written your Effects, you must register them so the effects start running. To register effects, add them to the `Store` initializer.
+After you've written your Effects, you must register them so the effects start running. 
+
+### Permanent global effects
+
+To register effects that will process all actions for the entire lifecycle of the `Store` instance, add them to the `Store` initializer.
 
 ```swift
 let store = Store(reducer: reducers, initialState: AppState(), effects: [PostDetailsView.getPostEffect])
@@ -141,7 +151,23 @@ let store = Store(reducer: reducers, initialState: AppState(), effects: [PostDet
 
 Effects start running immediately to ensure they are listening for all relevant actions.
 
-> **Advanced Tip:** As mentioned, `ofTypes(_:_:)` supports up to five action types.  To whitelist more than the five action types, combine multiple `ofTypes` operators together using `Publishers.Merge()`:
+### Temporary local effects
+
+To register effects that will process for a specific lifetime and can access local scopes, use the `register(_:)` method.  See the function-level documentation for details.
+```swift
+let showAlertOnError = Effect(dispatch: false) { actions in
+    actions.ofType(GetPostError.self)
+        .handleEvents(receiveOutput: { [weak self] _ in
+            self?.showAlert = true
+        })
+        .eraseActionType()
+        .eraseToAnyPublisher()
+}
+store.register(showAlertOnError)
+```
+## Advanced: More than five action types
+
+As mentioned, `ofTypes(_:_:)` supports up to five action types.  To whitelist more than the five action types, combine multiple `ofTypes` operators together using `Publishers.Merge()`:
 ```swift
 let actionsWhitelist = Publishers.Merge(
     actions.ofTypes(Action1.self, Action2.self, Action3.self, Action4.self, Action5.self), 
