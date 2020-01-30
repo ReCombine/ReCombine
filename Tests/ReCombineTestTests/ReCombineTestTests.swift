@@ -11,7 +11,7 @@ final class ReCombineTestTests: XCTestCase {
         let mockStore = MockStore(state: CounterState())
         let _ = CounterViewModel(store: mockStore)
         let expectationReceiveAction = expectation(description: "receiveAction")
-        cancellable = mockStore.actionSubject.sink(receiveValue: { action in
+        cancellable = mockStore.dispatchedActions.sink(receiveValue: { action in
             XCTAssertTrue(action is NoopAction)
             expectationReceiveAction.fulfill()
         })
@@ -24,7 +24,7 @@ final class ReCombineTestTests: XCTestCase {
         let vm = CounterViewModel(store: mockStore)
         vm.incrementTapped()
         let expectationReceiveAction = expectation(description: "receiveAction")
-        cancellable = mockStore.actionSubject.sink(receiveValue: { action in
+        cancellable = mockStore.dispatchedActions.sink(receiveValue: { action in
             XCTAssertTrue(action is Increment)
             expectationReceiveAction.fulfill()
         })
@@ -59,7 +59,7 @@ final class ReCombineTestTests: XCTestCase {
         wait(for: [expectationCountStringUpdates], timeout: 10.0)
     }
     
-    // MARK: - Test MockStore dispatch 
+    // For effects, test with real Store
 
     static var allTests = [
         ("testMockStore_DispatchedNoopActionCaptured", testMockStore_DispatchedNoopActionCaptured),

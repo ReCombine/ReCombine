@@ -1,8 +1,10 @@
 //
 //  Publisher+ReCombine.swift
-//  
+//  ReCombine
 //
-//  Created by Crowson, John on 12/17/19.
+//  Created by Crowson, John on 12/10/19.
+//  Copyright © 2019 Crowson, John.
+//  Licensed under Apache License 2.0
 //
 
 import Combine

@@ -179,7 +179,7 @@ open class Store<S>: Publisher {
     /// }
     /// ```
     /// - Parameter effect: action based side-effect.  It is processed until the returned `AnyCancellable` instance is cancelled.
-    public func register(_ effect: Effect) -> AnyCancellable {
+    open func register(_ effect: Effect) -> AnyCancellable {
         return effect.source(actionSubject.eraseToAnyPublisher())
             .filter { _ in return effect.dispatch }
             .sink(receiveValue: { [weak self] action in self?.dispatch(action: action) })
