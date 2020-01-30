@@ -59,12 +59,28 @@ final class ReCombineTestTests: XCTestCase {
         wait(for: [expectationCountStringUpdates], timeout: 10.0)
     }
     
-    // For effects, test with real Store
+    // MARK: - Test MockStore's register(_:) effects
+    
+    func testMockStore_RegisterEffect() {
+        let mockStore = MockStore(state: CounterState())
+        let vm = CounterViewModel(store: mockStore)
+        XCTAssertFalse(vm.showResetAlert)
+        
+        mockStore.dispatch(action: Reset())
+        let expectationReceiveValue = expectation(description: "receiveValue")
+        cancellable = vm.$showResetAlert.sink(receiveValue: { showResetAlert in
+            XCTAssertTrue(showResetAlert)
+            expectationReceiveValue.fulfill()
+        })
+        
+        wait(for: [expectationReceiveValue], timeout: 10.0)
+    }
 
     static var allTests = [
         ("testMockStore_DispatchedNoopActionCaptured", testMockStore_DispatchedNoopActionCaptured),
         ("testMockStore_DispatchedIncrementActionCaptured", testMockStore_DispatchedIncrementActionCaptured),
         ("testMockStore_InitState_CountStringSelects", testMockStore_InitState_CountStringSelects),
-        ("testMockStore_SetState_UpdatesCountString", testMockStore_SetState_UpdatesCountString)
+        ("testMockStore_SetState_UpdatesCountString", testMockStore_SetState_UpdatesCountString),
+        ("testMockStore_RegisterEffect", testMockStore_RegisterEffect),
     ]
 }
