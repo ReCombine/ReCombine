@@ -163,7 +163,7 @@ let showAlertOnError = Effect(dispatch: false) { actions in
         .eraseActionType()
         .eraseToAnyPublisher()
 }
-store.register(showAlertOnError)
+let effectCancellable = store.register(showAlertOnError)
 ```
 ## Advanced: More than five action types
 
