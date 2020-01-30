@@ -37,7 +37,7 @@ public struct NoopAction: Action {}
 ///     // ...
 ///   }
 /// }
-open class MockStore<S>: Store<S> {
+public class MockStore<S>: Store<S> {
     
     private var mockState: S
     private var mockStateSubject: CurrentValueSubject<S, Never>
