@@ -6,17 +6,17 @@ final class ReCombineTests: XCTestCase {
     
     // Store, Reducer setup
     
-    struct ScoreboardState {
+    struct ScoreboardState: Equatable {
         var home = Home.State()
         var away = Away.State()
-        var lastAction: Action?
+        var lastActionIsAction2 = false
     }
     
     struct ResetScore: Action {}
     
     enum Home {
         struct Score: Action {}
-        struct State {
+        struct State: Equatable {
             var score = 0
         }
         static func reducer(state: State, action: Action) -> State {
@@ -32,11 +32,15 @@ final class ReCombineTests: XCTestCase {
                     return state
             }
         }
+    }
+    
+    func getHomeScore(state: ScoreboardState) -> Int {
+        return state.home.score
     }
     
     enum Away {
         struct Score: Action {}
-        struct State {
+        struct State: Equatable {
             var score = 0
         }
         static func reducer(state: State, action: Action) -> State {
@@ -54,20 +58,24 @@ final class ReCombineTests: XCTestCase {
         }
     }
     
-    static func lastActionReducer(state: Action?, action: Action) -> Action {
-        return action
+    static func lastActionIsAction2Reducer(state: Bool, action: Action) -> Bool {
+        return action is Action2
     }
     
     static let reducer: ReducerFn<ScoreboardState> = combineReducers(
         forKey(\.home, use: Home.reducer),
         forKey(\.away, use: Away.reducer),
-        forKey(\.lastAction, use: lastActionReducer)
+        forKey(\.lastActionIsAction2, use: lastActionIsAction2Reducer)
     )
     
     // Effects setup
     
     struct Action1: Action {}
     struct Action2: Action {}
+    struct Action3: Action {}
+    struct Action4: Action {}
+    struct Action5: Action {}
+    struct Action6: Action {}
     
     static let doesDispatch = Effect(dispatch: true) { action in
         action.ofType(Action1.self)
@@ -157,7 +165,7 @@ final class ReCombineTests: XCTestCase {
         let expectationReceiveValue = expectation(description: "receiveValue")
         store.dispatch(action: Action1())
         cancellable = store.sink(receiveValue: { state in
-            XCTAssertTrue(state.lastAction is Action2)
+            XCTAssertTrue(state.lastActionIsAction2)
             expectationReceiveValue.fulfill()
         })
         
@@ -168,7 +176,7 @@ final class ReCombineTests: XCTestCase {
         let expectationReceiveValue = expectation(description: "receiveValue")
         store.dispatch(action: Action2())
         cancellable = store.sink(receiveValue: { state in
-            XCTAssertTrue(state.lastAction is Action2)
+            XCTAssertTrue(state.lastActionIsAction2)
             expectationReceiveValue.fulfill()
         })
         
@@ -205,8 +213,482 @@ final class ReCombineTests: XCTestCase {
     
     // MARK: - Memoized Selectors
     
-    
+    func testCreateSelector1_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
 
+        func sumString(_ score: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 1", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    func testCreateSelector2_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
+
+        func sumString(_ score1: Int, _ score2: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score1 + score2)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 2", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    func testCreateSelector3_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
+
+        func sumString(_ score1: Int, _ score2: Int, _ score3: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score1 + score2 + score3)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, getHomeScore, getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 3", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    func testCreateSelector4_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
+
+        func sumString(_ score1: Int, _ score2: Int, _ score3: Int, _ score4: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score1 + score2 + score3 + score4)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, getHomeScore, getHomeScore, getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 4", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    func testCreateSelector5_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
+
+        func sumString(_ score1: Int, _ score2: Int, _ score3: Int, _ score4: Int, _ score5: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score1 + score2 + score3 + score4 + score5)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 5", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    func testCreateSelector6_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
+
+        func sumString(_ score1: Int, _ score2: Int, _ score3: Int, _ score4: Int, _ score5: Int, _ score6: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score1 + score2 + score3 + score4 + score5 + score6)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 6", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    func testCreateSelector7_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
+
+        func sumString(_ score1: Int, _ score2: Int, _ score3: Int, _ score4: Int, _ score5: Int, _ score6: Int, _ score7: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score1 + score2 + score3 + score4 + score5 + score6 + score7)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 7", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    func testCreateSelector8_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
+
+        func sumString(_ score1: Int, _ score2: Int, _ score3: Int, _ score4: Int, _ score5: Int, _ score6: Int, _ score7: Int, _ score8: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 8", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    func testCreateSelector9_ShouldEvaluateOnNewHomeScoreOnly() {
+        var transformFuncExecutions = 0
+        var selectorEmissions = 0
+
+        func sumString(_ score1: Int, _ score2: Int, _ score3: Int, _ score4: Int, _ score5: Int, _ score6: Int, _ score7: Int, _ score8: Int, _ score9: Int) -> String {
+            transformFuncExecutions += 1
+            return "Score is \(score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8 + score9)"
+        }
+        // Define selector
+        let getSum = createSelector(getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, getHomeScore, transformation: sumString)
+        
+        // Use selector
+        store.select(getSum)
+            .sink(receiveValue: {_ in selectorEmissions += 1 })
+            .store(in: &cancellableSet)
+        
+        // Dispatch 1 home action and 4 away actions
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Home.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        store.dispatch(action: Away.Score())
+        
+        // When away score reaches 4, assert home selector only triggered twice:
+        // Once with initial store value, once when home score changed.
+        let expectationReceiveValueOf4 = expectation(description: "receiveValueOf4")
+        store.filter { state in state.away.score == 4 }
+            .sink(receiveValue: { state in
+                XCTAssertEqual(1, state.home.score)
+                XCTAssertEqual(4, state.away.score)
+                XCTAssertEqual(2, transformFuncExecutions)
+                XCTAssertEqual(2, selectorEmissions)
+                self.store.select(getSum)
+                    .sink(receiveValue: { sumString in
+                        XCTAssertEqual("Score is 9", sumString)
+                        expectationReceiveValueOf4.fulfill()
+                    }).store(in: &self.cancellableSet)
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationReceiveValueOf4], timeout: 10)
+    }
+    
+    // MARK: - ofTypes
+    
+    static func createPublisher(from action: Action) -> AnyPublisher<Action, Never> {
+        return Just(action).eraseToAnyPublisher()
+    }
+    
+    func testOfTypes2() {
+        let action1 = ReCombineTests.createPublisher(from: Action1())
+        let action2 = ReCombineTests.createPublisher(from: Action2())
+        let action3 = ReCombineTests.createPublisher(from: Action3())
+        let actionStream = Publishers.Merge3(action1, action2, action3).eraseToAnyPublisher()
+        
+        let expectationValuesCollected = expectation(description: "valuesCollected")
+        
+        actionStream.ofTypes(Action1.self, Action2.self)
+            .collect()
+            .sink(receiveValue: { filteredActions in
+                XCTAssertEqual(2, filteredActions.count)
+                XCTAssertTrue(filteredActions[0] is Action1)
+                XCTAssertTrue(filteredActions[1] is Action2)
+                expectationValuesCollected.fulfill()
+            }).store(in: &cancellableSet)
+        
+        wait(for: [expectationValuesCollected], timeout: 10)
+    }
+    
+    func testOfTypes3() {
+        let action1 = ReCombineTests.createPublisher(from: Action1())
+        let action2 = ReCombineTests.createPublisher(from: Action2())
+        let action3 = ReCombineTests.createPublisher(from: Action3())
+        let action4 = ReCombineTests.createPublisher(from: Action4())
+        let actionStream = Publishers.Merge4(action1, action2, action3, action4).eraseToAnyPublisher()
+        
+        let expectationValuesCollected = expectation(description: "valuesCollected")
+        
+        actionStream.ofTypes(Action1.self, Action2.self, Action3.self)
+            .collect()
+            .sink(receiveValue: { filteredActions in
+                XCTAssertEqual(3, filteredActions.count)
+                XCTAssertTrue(filteredActions[0] is Action1)
+                XCTAssertTrue(filteredActions[1] is Action2)
+                XCTAssertTrue(filteredActions[2] is Action3)
+                expectationValuesCollected.fulfill()
+        }).store(in: &cancellableSet)
+        
+        wait(for: [expectationValuesCollected], timeout: 10)
+    }
+    
+    func testOfTypes4() {
+        let action1 = ReCombineTests.createPublisher(from: Action1())
+        let action2 = ReCombineTests.createPublisher(from: Action2())
+        let action3 = ReCombineTests.createPublisher(from: Action3())
+        let action4 = ReCombineTests.createPublisher(from: Action4())
+        let action5 = ReCombineTests.createPublisher(from: Action5())
+        let actionStream = Publishers.Merge5(action1, action2, action3, action4, action5).eraseToAnyPublisher()
+        
+        let expectationValuesCollected = expectation(description: "valuesCollected")
+        
+        actionStream.ofTypes(Action1.self, Action2.self, Action3.self, Action4.self)
+            .collect()
+            .sink(receiveValue: { filteredActions in
+                XCTAssertEqual(4, filteredActions.count)
+                XCTAssertTrue(filteredActions[0] is Action1)
+                XCTAssertTrue(filteredActions[1] is Action2)
+                XCTAssertTrue(filteredActions[2] is Action3)
+                XCTAssertTrue(filteredActions[3] is Action4)
+                expectationValuesCollected.fulfill()
+        }).store(in: &cancellableSet)
+        
+        wait(for: [expectationValuesCollected], timeout: 10)
+    }
+    
+    func testOfTypes5() {
+        let action1 = ReCombineTests.createPublisher(from: Action1())
+        let action2 = ReCombineTests.createPublisher(from: Action2())
+        let action3 = ReCombineTests.createPublisher(from: Action3())
+        let action4 = ReCombineTests.createPublisher(from: Action4())
+        let action5 = ReCombineTests.createPublisher(from: Action5())
+        let action6 = ReCombineTests.createPublisher(from: Action6())
+        let actionStream = Publishers.Merge6(action1, action2, action3, action4, action5, action6).eraseToAnyPublisher()
+        
+        let expectationValuesCollected = expectation(description: "valuesCollected")
+        
+        actionStream.ofTypes(Action1.self, Action2.self, Action3.self, Action4.self, Action5.self)
+            .collect()
+            .sink(receiveValue: { filteredActions in
+                XCTAssertEqual(5, filteredActions.count)
+                XCTAssertTrue(filteredActions[0] is Action1)
+                XCTAssertTrue(filteredActions[1] is Action2)
+                XCTAssertTrue(filteredActions[2] is Action3)
+                XCTAssertTrue(filteredActions[3] is Action4)
+                XCTAssertTrue(filteredActions[4] is Action5)
+                expectationValuesCollected.fulfill()
+        }).store(in: &cancellableSet)
+        
+        wait(for: [expectationValuesCollected], timeout: 10)
+    }
+    
     static var allTests = [
         ("testInitialState", testInitialState),
         ("testDispatch_HomeScore_IncrementsState", testDispatch_HomeScore_IncrementsState),
@@ -215,5 +697,18 @@ final class ReCombineTests: XCTestCase {
         ("testEffects_ShouldDispatch", testEffects_ShouldDispatch),
         ("testEffects_ShouldNotDispatch", testEffects_ShouldNotDispatch),
         ("testRegister_EffectShouldDispatchForLifetimeOfCancellable", testRegister_EffectShouldDispatchForLifetimeOfCancellable),
+        ("testCreateSelector1_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector1_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testCreateSelector2_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector2_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testCreateSelector3_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector3_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testCreateSelector4_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector4_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testCreateSelector5_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector5_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testCreateSelector6_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector6_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testCreateSelector7_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector7_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testCreateSelector8_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector8_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testCreateSelector9_ShouldEvaluateOnNewHomeScoreOnly", testCreateSelector9_ShouldEvaluateOnNewHomeScoreOnly),
+        ("testOfTypes2", testOfTypes2),
+        ("testOfTypes3", testOfTypes3),
+        ("testOfTypes4", testOfTypes4),
+        ("testOfTypes5", testOfTypes5),
     ]
 }
