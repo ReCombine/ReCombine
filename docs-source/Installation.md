@@ -17,5 +17,5 @@ NOTE: These instructions are intended for usage on Xcode 11 and higher. Xcode 11
 1. Go to File > Swift Packages > Add Package Dependency...
 2. Paste the URL to the ReCombine repo on GitHub (https://github.com/ReCombine/ReCombine.git) into the search bar, then hit the Next button:
 3. Select what version you want to use, then hit next.
-4. Select which packages you want to use, then hit finish.  We currently only have the main ReCombine library.  Later, we will be adding a testing library.
+4. Select which packages you want to use, then hit finish.  The ReCombineTest package is optional and should only be added to test Targets.
 5. You're done!

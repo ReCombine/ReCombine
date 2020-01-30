@@ -89,8 +89,8 @@ open class Store<S>: Publisher {
     /// Publisher protocol :nodoc:
     public typealias Failure = Never
 
-    fileprivate var _state: S
-    fileprivate var stateSubject: CurrentValueSubject<S, Never>
+    private var state: S
+    private var stateSubject: CurrentValueSubject<S, Never>
     private var actionSubject: PassthroughSubject<Action, Never>
     private var cancellableSet: Set<AnyCancellable> = []
     private let reducer: ReducerFn<S>
@@ -101,7 +101,7 @@ open class Store<S>: Publisher {
     /// - Parameter effects: action based side-effects.  Each `Effect` element is processed for the lifetime of the `Store` instance.
     public init(reducer: @escaping ReducerFn<S>, initialState: S, effects: [Effect] = []) {
         self.reducer = reducer
-        _state = initialState
+        state = initialState
         stateSubject = CurrentValueSubject(initialState)
         actionSubject = PassthroughSubject()
 
@@ -122,9 +122,9 @@ open class Store<S>: Publisher {
     ///
     /// store.dispatch(action: Increment())
     /// ```
-    public func dispatch(action: Action) {
-        _state = reducer(_state, action)
-        stateSubject.send(_state)
+    open func dispatch(action: Action) {
+        state = reducer(state, action)
+        stateSubject.send(state)
         actionSubject.send(action)
     }
 
@@ -147,7 +147,7 @@ open class Store<S>: Publisher {
     }
 
     /// Publisher protocol - use the internal stateSubject under the hood :nodoc:
-    public func receive<T>(subscriber: T) where T: Subscriber, Failure == T.Failure, Output == T.Input {
+    open func receive<T>(subscriber: T) where T: Subscriber, Failure == T.Failure, Output == T.Input {
         stateSubject.receive(subscriber: subscriber)
     }
     
@@ -179,45 +179,9 @@ open class Store<S>: Publisher {
     /// }
     /// ```
     /// - Parameter effect: action based side-effect.  It is processed until the returned `AnyCancellable` instance is cancelled.
-    func register(_ effect: Effect) -> AnyCancellable {
+    open func register(_ effect: Effect) -> AnyCancellable {
         return effect.source(actionSubject.eraseToAnyPublisher())
             .filter { _ in return effect.dispatch }
             .sink(receiveValue: { [weak self] action in self?.dispatch(action: action) })
-    }
-}
-
-/// Mock `Store` for testing that allows updating the `Store` to a specific state without dispatching actions.
-///
-/// ```
-/// struct ViewModel {
-///   // ...
-///   init(store: Store<AppState> = store) {
-///     // ...
-///   }
-/// }
-///
-/// class ViewModelTests: XCTestCase {
-///
-///   let mockStore = MockStore(state: AppState())
-///
-///   override func setUp() {
-///     let viewModel = ViewModel(store: mockStore)
-///   }
-///
-///   func testSomething() {
-///     let otherMockState = // ...
-///     mockStore.setState(otherMockState)
-///     // ...
-///   }
-/// }
-open class MockStore<S>: Store<S> {
-    public init(state: S) {
-        super.init(reducer: { state, action in state}, initialState: state)
-    }
-
-    /// Set the current state of the store.
-    public func setState(_ state: S) {
-        self._state = state
-        self.stateSubject.send(state)
     }
 }
