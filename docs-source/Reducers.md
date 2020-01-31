@@ -21,7 +21,7 @@ First, define some actions for interacting with a piece of state.
 ```swift
 import ReCombine
 
-struct ScoreboardPage {
+enum ScoreboardPage {
     struct HomeScore: Action {}
     struct AwayScore: Action {}
     struct ResetScore: Action {}
@@ -41,7 +41,7 @@ Each reducer function is a listener of actions. The scoreboard actions defined a
 ```swift
 import ReCombine
 
-struct ScoreboardPage {
+enum ScoreboardPage {
     // Actions...
 
     struct State {
@@ -60,7 +60,7 @@ The reducer function's responsibility is to handle the state transitions in an i
 ```swift 
 import ReCombine
 
-struct ScoreboardPage {
+enum ScoreboardPage {
 
     // Actions...
 

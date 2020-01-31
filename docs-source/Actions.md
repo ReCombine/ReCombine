@@ -29,7 +29,7 @@ It can be helpful to group similar actions by category as well:
 ```swift
 import ReCombine
 
-struct Counter {
+enum Counter {
     struct Increment: Action {}
     struct Decrement: Action {}
     // other counter actions...
@@ -41,7 +41,7 @@ These actions describe events triggered by a user clicking on the increment and 
 ```swift
 import ReCombine
 
-struct Authentication {
+enum Authentication {
     struct Login: Action {
         let username: String
         let password: String
@@ -68,7 +68,7 @@ Let's look at an example action of initiating a login request.
 ```swift
 import ReCombine
 
-struct Authentication {
+enum Authentication {
     struct Login: Action {
         let username: String
         let password: String
