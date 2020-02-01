@@ -1,8 +1,9 @@
-name: PublishDocumentation
+name: PublishToGithubPages
 
-on: 
-  push:
-    tags: '*.*.*'
+on:
+  release:
+    types:
+    - published
 
 jobs:
   deploy_docs:
@@ -10,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Publish Jazzy Docs
-      uses: steven0351/publish-jazzy-docs@v1
+      uses: jtcrowson/publish-jazzy-docs@master
       with:
         personal_access_token: ${{ secrets.ACCESS_TOKEN }}
         config: jazzy.yaml
