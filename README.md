@@ -1,10 +1,6 @@
-![ReCombine Logo](https://user-images.githubusercontent.com/2394173/73595166-56a2db80-44e3-11ea-817e-86df1dd03555.png)
-
-# ReCombine
+<img alt="ReCombine Logo" width="400px" style="padding-top:16px" src="https://user-images.githubusercontent.com/2394173/73595166-56a2db80-44e3-11ea-817e-86df1dd03555.png">
 
 **Simple. Performant. Native.**
-
-![Swift](https://github.com/ReCombine/ReCombine/workflows/Swift/badge.svg?branch=master)
 
 A Swift Redux Library utilizing Apple's Combine Framework.
 
