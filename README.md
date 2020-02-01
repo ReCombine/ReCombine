@@ -1,3 +1,5 @@
+![ReCombine Logo](https://user-images.githubusercontent.com/2394173/73595166-56a2db80-44e3-11ea-817e-86df1dd03555.png)
+
 # ReCombine
 
 **Simple. Performant. Native.**
