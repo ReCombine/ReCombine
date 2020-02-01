@@ -1,4 +1,4 @@
-![ReCombine Logo](https://user-images.githubusercontent.com/2394173/73594934-c06db600-44e0-11ea-85e0-9b2d7268c98b.png)
+![ReCombine Logo](https://user-images.githubusercontent.com/2394173/73595166-56a2db80-44e3-11ea-817e-86df1dd03555.png)
 
 # ReCombine
 
