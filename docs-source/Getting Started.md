@@ -26,7 +26,7 @@ The following tutorial shows you how to manage the state of a counter, and how t
 ```swift
 import ReCombine
 
-struct Counter {
+enum Counter {
     struct Increment: Action {}
     struct Decrement: Action {}
     struct Reset: Action {}
@@ -38,7 +38,7 @@ struct Counter {
 ```swift
 import ReCombine
 
-struct Counter {
+enum Counter {
     struct Increment: Action {}
     struct Decrement: Action {}
     struct Reset: Action {}
