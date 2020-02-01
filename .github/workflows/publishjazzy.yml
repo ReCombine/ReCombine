@@ -1,13 +1,9 @@
 name: PublishToGithubPages
 
-#on:
-#  release:
-#    types:
-#    - created
 on:
-  push:
-    branches:
-    - 'jazzy-action'
+  release:
+    types:
+    - published
 
 jobs:
   deploy_docs:
