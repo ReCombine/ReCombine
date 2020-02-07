@@ -10,9 +10,6 @@
 import ReCombine
 import Combine
 
-/// Initial `Action` dispatched emitted by the `MockStore` `actionSubject`.  Denotes that no action has been dispatched to the `MockStore` instance yet.
-public struct NoopAction: Action {}
-
 /// Mock `Store` for testing that allows updating the `Store` to a specific state without dispatching actions.  Allows tests to "spy" on dispatched Actions.
 ///
 /// ```
@@ -41,13 +38,13 @@ public class MockStore<S>: Store<S> {
     
     private var mockState: S
     private var mockStateSubject: CurrentValueSubject<S, Never>
-    private var mockActionSubject: CurrentValueSubject<Action, Never>
+    private var mockActionSubject: PassthroughSubject<Action, Never>
     public let dispatchedActions: AnyPublisher<Action, Never>
     
     public init(state: S) {
         mockState = state
         mockStateSubject = CurrentValueSubject(state)
-        mockActionSubject = CurrentValueSubject(NoopAction())
+        mockActionSubject = PassthroughSubject()
         dispatchedActions = mockActionSubject.eraseToAnyPublisher()
         super.init(reducer: { state, _ in state }, initialState: state)
     }

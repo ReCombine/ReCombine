@@ -7,27 +7,16 @@ final class ReCombineTestTests: XCTestCase {
     
     // MARK: - Test MockStore's dispatched action tracking
     
-    func testMockStore_DispatchedNoopActionCaptured() {
-        let mockStore = MockStore(state: CounterState())
-        let _ = CounterViewModel(store: mockStore)
-        let expectationReceiveAction = expectation(description: "receiveAction")
-        cancellable = mockStore.dispatchedActions.sink(receiveValue: { action in
-            XCTAssertTrue(action is NoopAction)
-            expectationReceiveAction.fulfill()
-        })
-        
-        wait(for: [expectationReceiveAction], timeout: 10.0)
-    }
-    
     func testMockStore_DispatchedIncrementActionCaptured() {
         let mockStore = MockStore(state: CounterState())
         let vm = CounterViewModel(store: mockStore)
-        vm.incrementTapped()
+
         let expectationReceiveAction = expectation(description: "receiveAction")
         cancellable = mockStore.dispatchedActions.sink(receiveValue: { action in
             XCTAssertTrue(action is Increment)
             expectationReceiveAction.fulfill()
         })
+        vm.incrementTapped()
         
         wait(for: [expectationReceiveAction], timeout: 10.0)
     }
@@ -77,7 +66,6 @@ final class ReCombineTestTests: XCTestCase {
     }
 
     static var allTests = [
-        ("testMockStore_DispatchedNoopActionCaptured", testMockStore_DispatchedNoopActionCaptured),
         ("testMockStore_DispatchedIncrementActionCaptured", testMockStore_DispatchedIncrementActionCaptured),
         ("testMockStore_InitState_CountStringSelects", testMockStore_InitState_CountStringSelects),
         ("testMockStore_SetState_UpdatesCountString", testMockStore_SetState_UpdatesCountString),
