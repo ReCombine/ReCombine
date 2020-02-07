@@ -2,6 +2,10 @@
 
 **Simple. Performant. Native.**
 
+![Swift](https://github.com/ReCombine/ReCombine/workflows/Swift/badge.svg?branch=master)
+![Platform support](https://img.shields.io/badge/platform-ios%20%7C%20osx%20%7C%20tvos%20%7C%20watchos-lightgrey.svg?style=flat-square)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ReCombine/ReCombine/blob/master/LICENSE.md)
+
 A Swift Redux Library utilizing Apple's Combine Framework.
 
 ## Documentation
