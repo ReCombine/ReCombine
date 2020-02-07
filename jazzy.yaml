@@ -6,27 +6,30 @@ github_url: https://github.com/ReCombine/ReCombine
 hide_documentation_coverage: true
 copyright: Documentation modified from [NgRx.io](https://ngrx.io) under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/).
 custom_categories:
-- name: Guide - Basics
+- name: "Guide: Basics"
   children:
-  - Introduction
+  - What + Why
   - Installation
-  - Getting Started
-- name: Guide - Architecture
+  - Concepts + Tutorial
+- name: "Guide: Architecture"
   children:
   - Actions
   - Reducers
   - Selectors
   - Effects
-- name: Key Structures and Protocols
+- name: "Guide: Testing"
+  children:
+  - Testing
+- name: "API: Key Structures and Protocols"
   children:
   - Store
   - Action
   - Effect
-- name: Reducer Composition Helpers
+- name: "API: Reducer Composition Helpers"
   children:
   - combineReducers(_:)
   - forKey(_:use:)
-- name: Memoized Selectors
+- name: "API: Memoized Selectors"
   children:
   - createSelector(_:transformation:memoized:)
   - createSelector(_:_:transformation:memoized:)
@@ -37,14 +40,11 @@ custom_categories:
   - createSelector(_:_:_:_:_:_:_:transformation:memoized:)
   - createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)
   - createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)
-- name: Custom Operators
+- name: "API: Custom Operators"
   children:
   - Publisher
   - AnyPublisher
-- name: Testing
-  children:
-  - MockStore
-- name: Aliases
+- name: "API: Aliases"
   children:
   - ReducerFn
   - SelectorFn

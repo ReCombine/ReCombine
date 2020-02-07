@@ -32,4 +32,4 @@ You may need ReCombine if your state is:
 
 ## When Should I Not Use ReCombine for State Management
 
-It is important to note that ReCombine depends on Combine, so ReCombine supports applications that are iOS 13+.
+It is important to note that ReCombine depends on Combine, so ReCombine supports applications that are iOS 13+, macOS 10.15+, tvOS 13+, or watchOS 6+.

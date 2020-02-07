@@ -15,6 +15,10 @@ The following diagram represents the overall general flow of application state i
 
 <img src="./img/state-management-lifecycle.png" alt="ReCombine State Management Lifecycle Diagram" width="100%" height="100%" />
 
+## Example Application
+
+Want to see a working, fully unit tested project in action?  Check out our [example application on GitHub](https://github.com/ReCombine/ReCombine-Example-SwiftUI).
+
 ## Tutorial
 
 The following tutorial shows you how to manage the state of a counter, and how to select and display it within a SwiftUI iOS application.
