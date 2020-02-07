@@ -13,7 +13,7 @@ Detailed installation instructions can be found on the [Installation](./installa
 
 The following diagram represents the overall general flow of application state in ReCombine.
 
-<img src="./img/state-management-lifecycle.png" alt="ReCombine State Management Lifecycle Diagram" width="100%" height="100%" />
+<img src="https://user-images.githubusercontent.com/3779096/74048166-b4319f00-499f-11ea-86cc-cfab34c1aa6b.png" alt="ReCombine State Management Lifecycle Diagram" width="100%" height="100%" />
 
 ## Example Application
 
