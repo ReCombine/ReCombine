@@ -5,15 +5,15 @@ author_url: http://johncrowson.com
 github_url: https://github.com/ReCombine/ReCombine
 hide_documentation_coverage: true
 copyright: Documentation modified from [NgRx.io](https://ngrx.io) under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/).
-custom_head: |
-    <link rel="shortcut icon" href="http://www.iconj.com/ico/o/0/o0f1th7a7j.ico" type="image/x-icon" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@recombine_io" />
-    <meta name="twitter:creator" content="@john_crowson" />
-    <meta property="og:url" content="https://ReCombine.io" />
-    <meta property="og:title" content="ReCombine: Simple. Performant. Native." />
-    <meta property="og:description" content="A Swift Redux library utilizing Apple's Combine Framework. " />
-    <meta property="og:image" content="https://user-images.githubusercontent.com/2394173/73594932-c06db600-44e0-11ea-9794-3af56ee4db88.png" />
+head: |
+  <link rel="shortcut icon" href="http://www.iconj.com/ico/o/0/o0f1th7a7j.ico" type="image/x-icon" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@recombine_io" />
+  <meta name="twitter:creator" content="@john_crowson" />
+  <meta property="og:url" content="https://ReCombine.io" />
+  <meta property="og:title" content="ReCombine: Simple. Performant. Native." />
+  <meta property="og:description" content="A Swift Redux library utilizing Apple's Combine Framework. " />
+  <meta property="og:image" content="https://user-images.githubusercontent.com/2394173/73594932-c06db600-44e0-11ea-9794-3af56ee4db88.png" />
 custom_categories:
 - name: "Guide: Basics"
   children:
