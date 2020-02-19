@@ -19,8 +19,8 @@ custom_categories:
 - name: "Guide: Basics"
   children:
   - What + Why
-  - Installation
   - Concepts + Tutorial
+  - Installation
 - name: "Guide: Architecture"
   children:
   - Actions
@@ -30,6 +30,10 @@ custom_categories:
 - name: "Guide: Testing"
   children:
   - Testing
+- name: "Example Apps"
+  children:
+  - SwiftUI Scoreboard
+  - Storyboard Scoreboard
 - name: "API: Key Structures and Protocols"
   children:
   - Store
