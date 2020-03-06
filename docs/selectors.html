@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Selectors  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    <link rel="shortcut icon" href="http://www.iconj.com/ico/m/q/mqz5995lyk.ico" type="image/x-icon" />
+<style>h3 {font-weight:bold;}</style>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@recombine_io" />
+<meta name="twitter:creator" content="@john_crowson" />
+<meta property="og:url" content="https://ReCombine.io" />
+<meta property="og:title" content="ReCombine: Simple. Performant. Native." />
+<meta property="og:description" content="A Swift Redux library utilizing Apple's Combine Framework. " />
+<meta property="og:image" content="https://user-images.githubusercontent.com/2394173/73594932-c06db600-44e0-11ea-9794-3af56ee4db88.png" />
+
+  </head>
+  <body>
+    <a title="Selectors  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">ReCombine Docs</a></p>
+        <p class="header-right"><a href="https://github.com/ReCombine/ReCombine"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">ReCombine Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Selectors  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Basics.html">Guide: Basics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="what--why.html">What + Why</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="concepts--tutorial.html">Concepts + Tutorial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="installation.html">Installation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Architecture.html">Guide: Architecture</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="actions.html">Actions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="reducers.html">Reducers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="selectors.html">Selectors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="effects.html">Effects</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Testing.html">Guide: Testing</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="testing.html">Testing</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Example%20Apps.html">Example Apps</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="swiftui-scoreboard.html">SwiftUI Scoreboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="storyboard-scoreboard.html">Storyboard Scoreboard</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Key%20Structures%20and%20Protocols.html">API: Key Structures and Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Store.html">Store</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Effect.html">Effect</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Reducer%20Composition%20Helpers.html">API: Reducer Composition Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine15combineReducersyxx_AA6Action_ptcxx_AaC_ptcd_tlF">combineReducers(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine6forKey_3usexx_AA6Action_ptcs08WritableD4PathCyxq_G_q_q__AaD_ptctr0_lF">forKey(_:use:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Memoized%20Selectors.html">API: Memoized Selectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector__14transformation8memoizedq1_xcq_xc_q0_xcq1_q__q0_tcSbtSQRzSQR_SQR0_r2_lF">createSelector(_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector___14transformation8memoizedq2_xcq_xc_q0_xcq1_xcq2_q__q0_q1_tcSbtSQRzSQR_SQR0_SQR1_r3_lF">createSelector(_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector____14transformation8memoizedq3_xcq_xc_q0_xcq1_xcq2_xcq3_q__q0_q1_q2_tcSbtSQRzSQR_SQR0_SQR1_SQR2_r4_lF">createSelector(_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_____14transformation8memoizedq4_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_q__q0_q1_q2_q3_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_r5_lF">createSelector(_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector______14transformation8memoizedq5_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_q__q0_q1_q2_q3_q4_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_r6_lF">createSelector(_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_______14transformation8memoizedq6_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_q__q0_q1_q2_q3_q4_q5_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_r7_lF">createSelector(_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector________14transformation8memoizedq7_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_q__q0_q1_q2_q3_q4_q5_q6_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_r8_lF">createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_________14transformation8memoizedq8_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_xcq8_q__q0_q1_q2_q3_q4_q5_q6_q7_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_SQR7_r9_lF">createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Custom%20Operators.html">API: Custom Operators</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/AnyPublisher.html">AnyPublisher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Aliases.html">API: Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine9ReducerFna">ReducerFn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='selectors' class='heading'>Selectors</h1>
+
+<p>Selectors are pure functions used for obtaining slices of store state. ReCombine provides a few helper functions for optimizing this selection. Selectors provide many features when selecting slices of state:</p>
+
+<ul>
+<li>Portability</li>
+<li>Memoization</li>
+<li>Composition</li>
+<li>Testability</li>
+<li>Type Safety</li>
+</ul>
+
+<p>When using the <code>createSelector</code> function ReCombine keeps track of the latest arguments in which your selector function was invoked. Because selectors are <a href="https://en.wikipedia.org/wiki/Pure_function">pure functions</a>, the last result can be returned when the arguments match without reinvoking your selector function. This can provide performance benefits, particularly with selectors that perform expensive computation. This practice is known as <a href="https://en.wikipedia.org/wiki/Memoization">memoization</a>.</p>
+
+<blockquote>
+<p><strong>Link to documentation for <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</strong></p>
+</blockquote>
+<h3 id='using-a-selector-for-one-piece-of-state' class='heading'>Using a selector for one piece of state</h3>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">struct</span> <span class="kt">CounterState</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">AppState</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">counter</span><span class="p">:</span> <span class="kt">CounterState</span> <span class="o">=</span> <span class="kt">CounterState</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">selectCounter</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="k">in</span> <span class="n">state</span><span class="o">.</span><span class="n">counter</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">selectCount</span> <span class="o">=</span> <span class="nf">createSelector</span><span class="p">(</span>
+    <span class="n">selectCounter</span><span class="p">,</span>
+    <span class="nv">transformation</span><span class="p">:</span> <span class="p">{</span> <span class="n">counter</span> <span class="k">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">count</span> <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+<h3 id='using-selectors-for-multiple-pieces-of-state' class='heading'>Using selectors for multiple pieces of state</h3>
+
+<p>The <code>createSelector</code> can be used to select some data from the state based on several slices of the same state.</p>
+
+<p>The <code>createSelector</code> function can take up to 9 selector functions for more complete state selections.</p>
+
+<p>For example, imagine you have a <code>selectedUser</code> object in the state. You also have an <code>allBooks</code> array of book objects.</p>
+
+<p>And you want to show all books for the current user.</p>
+
+<p>You can use <code>createSelector</code> to achieve just that. Your visible books will always be up to date even if you update them in <code>allBooks</code>. They will always show the books that belong to your user if there is one selected and will show all the books when there is no user selected.</p>
+
+<p>The result will be just some of your state filtered by another section of the state. And it will be always up to date.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">struct</span> <span class="kt">User</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Book</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">AppState</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">selectedUser</span><span class="p">:</span> <span class="kt">User</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">allBooks</span><span class="p">:</span> <span class="p">[</span><span class="kt">Book</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">selectUser</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="k">in</span> <span class="n">state</span><span class="o">.</span><span class="n">selectedUser</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">selectAllBooks</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="k">in</span> <span class="n">state</span><span class="o">.</span><span class="n">allBooks</span> <span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">selectVisibleBooks</span> <span class="o">=</span> <span class="nf">createSelector</span><span class="p">(</span>
+    <span class="n">selectUser</span><span class="p">,</span>
+    <span class="n">selectAllBooks</span><span class="p">,</span>
+    <span class="nv">transformation</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">selectedUser</span><span class="p">,</span> <span class="n">allBooks</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Book</span><span class="p">]</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">selectedUser</span> <span class="o">=</span> <span class="n">selectedUser</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">allBooks</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="p">(</span><span class="nv">book</span><span class="p">:</span> <span class="kt">Book</span><span class="p">)</span> <span class="k">in</span> <span class="n">book</span><span class="o">.</span><span class="n">userId</span> <span class="o">==</span> <span class="n">selectedUser</span><span class="o">.</span><span class="n">id</span> <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">allBooks</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+<h2 id='non-memoized-selectors' class='heading'>Non-Memoized Selectors</h2>
+
+<p>A selector&rsquo;s memoized value stays in memory indefinitely. If the you do not want to store the memoized value, you can use <code>createSelector</code> with <code>memoized: false</code>:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="k">let</span> <span class="nv">selectVisibleBooks</span> <span class="o">=</span> <span class="nf">createSelector</span><span class="p">(</span>
+    <span class="n">selectUser</span><span class="p">,</span>
+    <span class="n">selectAllBooks</span><span class="p">,</span>
+    <span class="nv">transformation</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">selectedUser</span><span class="p">,</span> <span class="n">allBooks</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Book</span><span class="p">]</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">selectedUser</span> <span class="o">=</span> <span class="n">selectedUser</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">allBooks</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="p">(</span><span class="nv">book</span><span class="p">:</span> <span class="kt">Book</span><span class="p">)</span> <span class="k">in</span> <span class="n">book</span><span class="o">.</span><span class="n">userId</span> <span class="o">==</span> <span class="n">selectedUser</span><span class="o">.</span><span class="n">id</span> <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">allBooks</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nv">memoized</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">)</span>
+</code></pre>
+<h2 id='advanced-usage' class='heading'>Advanced Usage</h2>
+
+<p>Selectors empower you to compose a <a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs#solution">read model for your application state</a>.
+In terms of the CQRS architectural pattern, ReCombine separates the read model (selectors) from the write model (reducers).</p>
+
+<p>This section covers some basics of how selectors compare to pipeable operators and demonstrates how <code>createSelector</code> and <code>scan</code> are utilized to display a history of state transitions.</p>
+<h3 id='breaking-down-the-basics' class='heading'>Breaking Down the Basics</h3>
+<h4 id='select-a-non-empty-state-using-pipeable-operators' class='heading'>Select a non-empty state using pipeable operators</h4>
+
+<p>Let&rsquo;s pretend we have a selector called <code>selectValues</code> and the view model for displaying the data is only interested in defined values, i.e., it should not display empty states.</p>
+
+<p>We can achieve this behaviour by using only Combine operators:</p>
+<pre class="highlight swift"><code><span class="n">store</span>
+    <span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="n">state</span> <span class="k">in</span> <span class="nf">selectValues</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="p">})</span>
+    <span class="o">.</span><span class="nf">compactMap</span><span class="p">({</span> <span class="n">values</span> <span class="k">in</span> <span class="n">values</span> <span class="p">})</span>
+    <span class="o">.</span><span class="nf">sink</span><span class="p">(</span><span class="cm">/* .. */</span><span class="p">)</span>
+</code></pre>
+
+<p>The above can be further rewritten to use the <code>select()</code> utility function from ReCombine:</p>
+<pre class="highlight swift"><code><span class="n">store</span>
+    <span class="o">.</span><span class="nf">select</span><span class="p">(</span><span class="n">selectValues</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">compactMap</span><span class="p">({</span> <span class="n">values</span> <span class="k">in</span> <span class="n">values</span> <span class="p">})</span>
+    <span class="o">.</span><span class="nf">sink</span><span class="p">(</span><span class="cm">/* .. */</span><span class="p">)</span>
+</code></pre>
+<h4 id='solution-extracting-a-code-publisher-code-operator' class='heading'>Solution: Extracting a <code>Publisher</code> operator</h4>
+
+<p>To make the <code>select()</code> and <code>compactMap()</code> behaviour a reusable piece of code, we extract a new <code>Publisher</code> operator, specifically for <code><a href="Classes/Store.html">Store</a></code> where the generic state <code>S</code> matches our <code>AppState</code>:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">extension</span> <span class="kt">Store</span> <span class="k">where</span> <span class="kt">S</span> <span class="o">==</span> <span class="kt">AppState</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">selectFilteredValues</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="kt">Never</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">select</span><span class="p">(</span><span class="n">selectValues</span><span class="p">)</span><span class="o">.</span><span class="nf">compactMap</span><span class="p">({</span> <span class="n">values</span> <span class="k">in</span> <span class="n">values</span> <span class="p">})</span><span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">store</span>
+    <span class="o">.</span><span class="nf">selectFilteredValues</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">sink</span><span class="p">(</span><span class="cm">/* .. */</span><span class="p">)</span>
+</code></pre>
+<h3 id='advanced-example-select-the-last-n-state-transitions' class='heading'>Advanced Example: Select the last {n} state transitions</h3>
+
+<p>Let&rsquo;s examine the technique of combining ReCombine selectors and Combine operators in an advanced example.</p>
+
+<p>In this example, we will write a selector function that projects values from two different slices of the application state.
+The projected state will emit a value when both slices of state have a value.
+Otherwise, the selector will emit a <code>nil</code> value.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="k">let</span> <span class="nv">selectProjectedValues</span> <span class="o">=</span> <span class="nf">createSelector</span><span class="p">(</span>
+    <span class="n">selectFoo</span><span class="p">,</span>
+    <span class="n">selectBar</span><span class="p">,</span>
+    <span class="nv">transformation</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)?</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">foo</span> <span class="o">=</span> <span class="n">foo</span><span class="p">,</span> <span class="k">let</span> <span class="nv">bar</span> <span class="o">=</span> <span class="n">bar</span> <span class="p">{</span>
+            <span class="nf">return</span> <span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">nil</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
+<p>Then, the View should visualize the history of state transitions.
+We are not only interested in the current state but rather like to display the last <code>n</code> pieces of state.
+Meaning that we will map a stream of state values (<code>1</code>, <code>2</code>, <code>3</code>) to an array of state values (<code>[1, 2, 3]</code>).</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">extension</span> <span class="kt">Store</span> <span class="k">where</span> <span class="kt">S</span> <span class="o">==</span> <span class="kt">AppState</span> <span class="p">{</span>
+    <span class="c1">// The number of state transitions is given by the user</span>
+    <span class="kd">func</span> <span class="nf">selectLastStateTransitions</span><span class="p">(</span><span class="n">_</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">ProjectedValues</span><span class="p">],</span> <span class="kt">Never</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="c1">// Thanks to `createSelector` the operator will have memoization "for free"</span>
+        <span class="k">return</span> <span class="nf">select</span><span class="p">(</span><span class="n">selectProjectedValues</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">compactMap</span><span class="p">({</span> <span class="n">projectedValues</span> <span class="k">in</span> <span class="n">projectedValues</span> <span class="p">})</span>
+            <span class="c1">// Combines the last `count` state values in array</span>
+            <span class="o">.</span><span class="nf">scan</span><span class="p">([],</span> <span class="p">{</span> <span class="p">(</span><span class="nv">acc</span><span class="p">:</span> <span class="p">[</span><span class="kt">ProjectedValues</span><span class="p">],</span> <span class="nv">curr</span><span class="p">:</span> <span class="kt">ProjectedValues</span><span class="p">)</span> <span class="k">in</span>
+                <span class="k">var</span> <span class="nv">allStateTransitions</span> <span class="o">=</span> <span class="n">acc</span>
+                <span class="n">allStateTransitions</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">curr</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kt">Array</span><span class="p">(</span><span class="n">allStateTransitions</span><span class="o">.</span><span class="nf">prefix</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+            <span class="p">})</span><span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Finally, the view model will subscribe to the store, telling the number of state transitions it wishes to display:</p>
+<pre class="highlight swift"><code><span class="n">store</span>
+    <span class="o">.</span><span class="nf">selectLastStateTransitions</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">sink</span><span class="p">(</span><span class="cm">/* .. */</span><span class="p">)</span>
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Documentation modified from <a class="link" href="https://ngrx.io" target="_blank" rel="external">NgRx.io</a> under <a class="link" href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external">CC BY 4.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

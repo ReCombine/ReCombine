@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>API: Memoized Selectors  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    <link rel="shortcut icon" href="http://www.iconj.com/ico/m/q/mqz5995lyk.ico" type="image/x-icon" />
+<style>h3 {font-weight:bold;}</style>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@recombine_io" />
+<meta name="twitter:creator" content="@john_crowson" />
+<meta property="og:url" content="https://ReCombine.io" />
+<meta property="og:title" content="ReCombine: Simple. Performant. Native." />
+<meta property="og:description" content="A Swift Redux library utilizing Apple's Combine Framework. " />
+<meta property="og:image" content="https://user-images.githubusercontent.com/2394173/73594932-c06db600-44e0-11ea-9794-3af56ee4db88.png" />
+
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/API: Memoized Selectors" class="dashAnchor"></a>
+    <a title="API: Memoized Selectors  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">ReCombine Docs</a></p>
+        <p class="header-right"><a href="https://github.com/ReCombine/ReCombine"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">ReCombine Reference</a>
+        <img id="carat" src="img/carat.png" />
+        API: Memoized Selectors  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Basics.html">Guide: Basics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="what--why.html">What + Why</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="concepts--tutorial.html">Concepts + Tutorial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="installation.html">Installation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Architecture.html">Guide: Architecture</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="actions.html">Actions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="reducers.html">Reducers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="selectors.html">Selectors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="effects.html">Effects</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Testing.html">Guide: Testing</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="testing.html">Testing</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Example%20Apps.html">Example Apps</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="swiftui-scoreboard.html">SwiftUI Scoreboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="storyboard-scoreboard.html">Storyboard Scoreboard</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Key%20Structures%20and%20Protocols.html">API: Key Structures and Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Store.html">Store</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Effect.html">Effect</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Reducer%20Composition%20Helpers.html">API: Reducer Composition Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine15combineReducersyxx_AA6Action_ptcxx_AaC_ptcd_tlF">combineReducers(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine6forKey_3usexx_AA6Action_ptcs08WritableD4PathCyxq_G_q_q__AaD_ptctr0_lF">forKey(_:use:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Memoized%20Selectors.html">API: Memoized Selectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector__14transformation8memoizedq1_xcq_xc_q0_xcq1_q__q0_tcSbtSQRzSQR_SQR0_r2_lF">createSelector(_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector___14transformation8memoizedq2_xcq_xc_q0_xcq1_xcq2_q__q0_q1_tcSbtSQRzSQR_SQR0_SQR1_r3_lF">createSelector(_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector____14transformation8memoizedq3_xcq_xc_q0_xcq1_xcq2_xcq3_q__q0_q1_q2_tcSbtSQRzSQR_SQR0_SQR1_SQR2_r4_lF">createSelector(_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_____14transformation8memoizedq4_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_q__q0_q1_q2_q3_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_r5_lF">createSelector(_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector______14transformation8memoizedq5_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_q__q0_q1_q2_q3_q4_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_r6_lF">createSelector(_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_______14transformation8memoizedq6_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_q__q0_q1_q2_q3_q4_q5_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_r7_lF">createSelector(_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector________14transformation8memoizedq7_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_q__q0_q1_q2_q3_q4_q5_q6_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_r8_lF">createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_________14transformation8memoizedq8_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_xcq8_q__q0_q1_q2_q3_q4_q5_q6_q7_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_SQR7_r9_lF">createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Custom%20Operators.html">API: Custom Operators</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/AnyPublisher.html">AnyPublisher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Aliases.html">API: Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine9ReducerFna">ReducerFn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>API: Memoized Selectors</h1>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Higher order function that creates a composable, optimized selector function.  A selector function is a pure function used for obtaining slices of store state.</p>
+
+<p><strong>Example:</strong> The following shows a composable, memoized <code>selectVisibleBooks</code> selector function.</p>
+
+<ul>
+<li><p><strong>Composable:</strong> We depend on the <code>selectUser</code> and <code>selectAllBooks</code> selectors to filter only the books belonging to the selectedUser, if one exists.</p></li>
+<li><p><strong>Memoized:</strong> By using the default <code>memoized = true</code> parameter, if the <code>allMovies</code> section slice of the state changes, the <code>transformation</code> in <code>selectVisibleBooks</code> would not recompute.</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">{</span>
+<span class="k">var</span> <span class="nv">selectedUser</span><span class="p">:</span> <span class="kt">User</span><span class="p">?</span>
+<span class="k">var</span> <span class="nv">allBooks</span><span class="p">:</span> <span class="p">[</span><span class="kt">Book</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="nv">allMovies</span><span class="p">:</span> <span class="p">[</span><span class="kt">Movie</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="nv">selectUser</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="k">in</span> <span class="n">state</span><span class="o">.</span><span class="n">selectedUser</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">selectAllBooks</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">)</span> <span class="k">in</span> <span class="n">state</span><span class="o">.</span><span class="n">allBooks</span> <span class="p">}</span>
+</code></pre></li>
+</ul>
+
+<p>let selectVisibleBooks = createSelector(
+    selectUser,
+    selectAllBooks,
+    transformation: { (selectedUser, allBooks) -&gt; [Book] in
+        if let selectedUser = selectedUser {
+            return allBooks.filter { (book: Book) in book.userId == selectedUser.id }
+        } else {
+            return allBooks
+        }
+    }
+)</p>
+<pre class="highlight swift"><code></code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selectorFn</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Up to nine selector functions.  The result of each selector function will be used as input to the <code>transformation</code>  parameter&rsquo;s closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transformation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A projector function used to derive, transform or combine data from the state slices passed to it and return this modified data as a single object - typically for direct view consumption.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>memoized</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>True by default.  If true, will cache the result from the last input. Prevents unnecessary recomputation if dependent state slices do not change.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector__14transformation8memoizedq1_xcq_xc_q0_xcq1_q__q0_tcSbtSQRzSQR_SQR0_r2_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector__14transformation8memoizedq1_xcq_xc_q0_xcq1_q__q0_tcSbtSQRzSQR_SQR0_r2_lF">createSelector(_:_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See documentation in <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V1</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V2</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn1</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V1</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn2</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V2</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V1</span><span class="p">,</span> <span class="kt">V2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector___14transformation8memoizedq2_xcq_xc_q0_xcq1_xcq2_q__q0_q1_tcSbtSQRzSQR_SQR0_SQR1_r3_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:_:_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector___14transformation8memoizedq2_xcq_xc_q0_xcq1_xcq2_q__q0_q1_tcSbtSQRzSQR_SQR0_SQR1_r3_lF">createSelector(_:_:_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See documentation in <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V1</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V2</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V3</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn1</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V1</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn2</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V2</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn3</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V3</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V1</span><span class="p">,</span> <span class="kt">V2</span><span class="p">,</span> <span class="kt">V3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector____14transformation8memoizedq3_xcq_xc_q0_xcq1_xcq2_xcq3_q__q0_q1_q2_tcSbtSQRzSQR_SQR0_SQR1_SQR2_r4_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:_:_:_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector____14transformation8memoizedq3_xcq_xc_q0_xcq1_xcq2_xcq3_q__q0_q1_q2_tcSbtSQRzSQR_SQR0_SQR1_SQR2_r4_lF">createSelector(_:_:_:_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See documentation in <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V1</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V2</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V3</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V4</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn1</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V1</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn2</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V2</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn3</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V3</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn4</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V4</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V1</span><span class="p">,</span> <span class="kt">V2</span><span class="p">,</span> <span class="kt">V3</span><span class="p">,</span> <span class="kt">V4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector_____14transformation8memoizedq4_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_q__q0_q1_q2_q3_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_r5_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:_:_:_:_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector_____14transformation8memoizedq4_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_q__q0_q1_q2_q3_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_r5_lF">createSelector(_:_:_:_:_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See documentation in <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V1</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V2</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V3</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V4</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V5</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn1</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V1</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn2</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V2</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn3</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V3</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn4</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V4</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn5</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V5</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V1</span><span class="p">,</span> <span class="kt">V2</span><span class="p">,</span> <span class="kt">V3</span><span class="p">,</span> <span class="kt">V4</span><span class="p">,</span> <span class="kt">V5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector______14transformation8memoizedq5_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_q__q0_q1_q2_q3_q4_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_r6_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:_:_:_:_:_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector______14transformation8memoizedq5_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_q__q0_q1_q2_q3_q4_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_r6_lF">createSelector(_:_:_:_:_:_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See documentation in <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V1</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V2</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V3</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V4</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V5</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V6</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn1</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V1</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn2</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V2</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn3</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V3</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn4</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V4</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn5</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V5</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn6</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V6</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V1</span><span class="p">,</span> <span class="kt">V2</span><span class="p">,</span> <span class="kt">V3</span><span class="p">,</span> <span class="kt">V4</span><span class="p">,</span> <span class="kt">V5</span><span class="p">,</span> <span class="kt">V6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector_______14transformation8memoizedq6_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_q__q0_q1_q2_q3_q4_q5_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_r7_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:_:_:_:_:_:_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector_______14transformation8memoizedq6_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_q__q0_q1_q2_q3_q4_q5_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_r7_lF">createSelector(_:_:_:_:_:_:_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See documentation in <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V1</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V2</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V3</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V4</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V5</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V6</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V7</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn1</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V1</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn2</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V2</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn3</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V3</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn4</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V4</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn5</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V5</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn6</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V6</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn7</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V7</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V1</span><span class="p">,</span> <span class="kt">V2</span><span class="p">,</span> <span class="kt">V3</span><span class="p">,</span> <span class="kt">V4</span><span class="p">,</span> <span class="kt">V5</span><span class="p">,</span> <span class="kt">V6</span><span class="p">,</span> <span class="kt">V7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector________14transformation8memoizedq7_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_q__q0_q1_q2_q3_q4_q5_q6_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_r8_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector________14transformation8memoizedq7_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_q__q0_q1_q2_q3_q4_q5_q6_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_r8_lF">createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See documentation in <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V1</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V2</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V3</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V4</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V5</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V6</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V7</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V8</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn1</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V1</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn2</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V2</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn3</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V3</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn4</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V4</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn5</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V5</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn6</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V6</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn7</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V7</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn8</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V8</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V1</span><span class="p">,</span> <span class="kt">V2</span><span class="p">,</span> <span class="kt">V3</span><span class="p">,</span> <span class="kt">V4</span><span class="p">,</span> <span class="kt">V5</span><span class="p">,</span> <span class="kt">V6</span><span class="p">,</span> <span class="kt">V7</span><span class="p">,</span> <span class="kt">V8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ReCombine14createSelector_________14transformation8memoizedq8_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_xcq8_q__q0_q1_q2_q3_q4_q5_q6_q7_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_SQR7_r9_lF"></a>
+                    <a name="//apple_ref/swift/Function/createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ReCombine14createSelector_________14transformation8memoizedq8_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_xcq8_q__q0_q1_q2_q3_q4_q5_q6_q7_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_SQR7_r9_lF">createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>See documentation in <code><a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">createSelector</span><span class="o">&lt;</span>
+    <span class="kt">S</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V1</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V2</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V3</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V4</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V5</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V6</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V7</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V8</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">V9</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span>
+    <span class="kt">T</span>
+    <span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">selectorFn1</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V1</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn2</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V2</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn3</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V3</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn4</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V4</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn5</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V5</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn6</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V6</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn7</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V7</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn8</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V8</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="n">_</span> <span class="nv">selectorFn9</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">V9</span><span class="o">&gt;</span><span class="p">,</span>
+      <span class="nv">transformation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">V1</span><span class="p">,</span> <span class="kt">V2</span><span class="p">,</span> <span class="kt">V3</span><span class="p">,</span> <span class="kt">V4</span><span class="p">,</span> <span class="kt">V5</span><span class="p">,</span> <span class="kt">V6</span><span class="p">,</span> <span class="kt">V7</span><span class="p">,</span> <span class="kt">V8</span><span class="p">,</span> <span class="kt">V9</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">,</span>
+      <span class="nv">memoized</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a></span><span class="o">&lt;</span><span class="kt">S</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>Documentation modified from <a class="link" href="https://ngrx.io" target="_blank" rel="external">NgRx.io</a> under <a class="link" href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external">CC BY 4.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Actions  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    <link rel="shortcut icon" href="http://www.iconj.com/ico/m/q/mqz5995lyk.ico" type="image/x-icon" />
+<style>h3 {font-weight:bold;}</style>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@recombine_io" />
+<meta name="twitter:creator" content="@john_crowson" />
+<meta property="og:url" content="https://ReCombine.io" />
+<meta property="og:title" content="ReCombine: Simple. Performant. Native." />
+<meta property="og:description" content="A Swift Redux library utilizing Apple's Combine Framework. " />
+<meta property="og:image" content="https://user-images.githubusercontent.com/2394173/73594932-c06db600-44e0-11ea-9794-3af56ee4db88.png" />
+
+  </head>
+  <body>
+    <a title="Actions  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">ReCombine Docs</a></p>
+        <p class="header-right"><a href="https://github.com/ReCombine/ReCombine"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">ReCombine Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Actions  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Basics.html">Guide: Basics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="what--why.html">What + Why</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="concepts--tutorial.html">Concepts + Tutorial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="installation.html">Installation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Architecture.html">Guide: Architecture</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="actions.html">Actions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="reducers.html">Reducers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="selectors.html">Selectors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="effects.html">Effects</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Testing.html">Guide: Testing</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="testing.html">Testing</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Example%20Apps.html">Example Apps</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="swiftui-scoreboard.html">SwiftUI Scoreboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="storyboard-scoreboard.html">Storyboard Scoreboard</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Key%20Structures%20and%20Protocols.html">API: Key Structures and Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Store.html">Store</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Effect.html">Effect</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Reducer%20Composition%20Helpers.html">API: Reducer Composition Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine15combineReducersyxx_AA6Action_ptcxx_AaC_ptcd_tlF">combineReducers(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine6forKey_3usexx_AA6Action_ptcs08WritableD4PathCyxq_G_q_q__AaD_ptctr0_lF">forKey(_:use:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Memoized%20Selectors.html">API: Memoized Selectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector__14transformation8memoizedq1_xcq_xc_q0_xcq1_q__q0_tcSbtSQRzSQR_SQR0_r2_lF">createSelector(_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector___14transformation8memoizedq2_xcq_xc_q0_xcq1_xcq2_q__q0_q1_tcSbtSQRzSQR_SQR0_SQR1_r3_lF">createSelector(_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector____14transformation8memoizedq3_xcq_xc_q0_xcq1_xcq2_xcq3_q__q0_q1_q2_tcSbtSQRzSQR_SQR0_SQR1_SQR2_r4_lF">createSelector(_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_____14transformation8memoizedq4_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_q__q0_q1_q2_q3_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_r5_lF">createSelector(_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector______14transformation8memoizedq5_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_q__q0_q1_q2_q3_q4_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_r6_lF">createSelector(_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_______14transformation8memoizedq6_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_q__q0_q1_q2_q3_q4_q5_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_r7_lF">createSelector(_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector________14transformation8memoizedq7_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_q__q0_q1_q2_q3_q4_q5_q6_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_r8_lF">createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_________14transformation8memoizedq8_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_xcq8_q__q0_q1_q2_q3_q4_q5_q6_q7_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_SQR7_r9_lF">createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Custom%20Operators.html">API: Custom Operators</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/AnyPublisher.html">AnyPublisher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Aliases.html">API: Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine9ReducerFna">ReducerFn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='actions' class='heading'>Actions</h1>
+
+<p>Actions are one of the main building blocks in ReCombine. Actions express <em>unique events</em> that happen throughout your application. From user interaction with the page, external interaction through network requests, and direct interaction with device APIs, these and more events are described with actions.</p>
+<h2 id='introduction' class='heading'>Introduction</h2>
+
+<p>Actions are used in many areas of ReCombine. Actions are the inputs and outputs of many systems in ReCombine. Actions help you to understand how events are handled in your application. This guide provides general rules and examples for writing actions in your application.</p>
+<h2 id='the-action-protocol' class='heading'>The Action protocol</h2>
+
+<p>An <code><a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a></code> in ReCombine is made up of a simple protocol:</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Action</span> <span class="p">{}</span>
+</code></pre>
+
+<p>The protocol should be implemented with a name describing the action that will be dispatched in your application. Actions can be nested inside other structures to group categories of actions based on event source. You add properties to an action to provide additional context or metadata for an action.</p>
+
+<p>Listed below are examples of actions:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">struct</span> <span class="kt">AuthenticationLoginSuccess</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+</code></pre>
+
+<p>It can be helpful to group similar actions by category as well:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">enum</span> <span class="kt">Counter</span> <span class="p">{</span>
+    <span class="kd">struct</span> <span class="kt">Increment</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+    <span class="kd">struct</span> <span class="kt">Decrement</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+    <span class="c1">// other counter actions...</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>These actions describe events triggered by a user clicking on the increment and decrement buttons on the UI.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">enum</span> <span class="kt">Authentication</span> <span class="p">{</span>
+    <span class="kd">struct</span> <span class="kt">Login</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span>
+        <span class="k">let</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>This action describes an event triggered by a user clicking a login button from the authentication page to attempt to authenticate a user. The username and password are defined as additional metadata provided from the authentication view controller.</p>
+<h2 id='writing-actions' class='heading'>Writing actions</h2>
+
+<p>There are a few rules to writing good actions within your application.</p>
+
+<ul>
+<li><strong>Upfront</strong> - write actions before developing features to understand and gain a shared knowledge of the feature being implemented.</li>
+<li><strong>Divide</strong> - categorize actions based on the event source.</li>
+<li><strong>Many</strong> - actions are inexpensive to write, so the more actions you write, the better you express flows in your application.</li>
+<li><strong>Event-Driven</strong> - capture <em>events</em> <strong>not</strong> <em>commands</em> as you are separating the description of an event and the handling of that event.</li>
+<li><strong>Descriptive</strong> - provide context that are targeted to a unique event with more detailed information you can use to aid in debugging.</li>
+</ul>
+
+<p>Following these guidelines helps you follow how these actions flow throughout your application.</p>
+
+<p>Let&rsquo;s look at an example action of initiating a login request.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">enum</span> <span class="kt">Authentication</span> <span class="p">{</span>
+    <span class="kd">struct</span> <span class="kt">Login</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span>
+        <span class="k">let</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Use the action when dispatching.</p>
+<pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">test</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">store</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Authentication</span><span class="o">.</span><span class="kt">Login</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="nf">getUsername</span><span class="p">(),</span> <span class="nv">password</span><span class="p">:</span> <span class="nf">getPassword</span><span class="p">()))</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The action has very specific context about where the action came from and what event happened.</p>
+<h2 id='next-steps' class='heading'>Next Steps</h2>
+
+<p>Action&rsquo;s only responsibilities are to express unique events and intents. Learn how they are handled in the guides below.</p>
+
+<ul>
+<li><a href="./reducers.html">Reducers</a></li>
+<li><a href="./effects.html">Effects</a></li>
+</ul>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Documentation modified from <a class="link" href="https://ngrx.io" target="_blank" rel="external">NgRx.io</a> under <a class="link" href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external">CC BY 4.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

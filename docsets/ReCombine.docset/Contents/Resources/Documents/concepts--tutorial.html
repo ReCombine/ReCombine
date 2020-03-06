@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Concepts + Tutorial  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    <link rel="shortcut icon" href="http://www.iconj.com/ico/m/q/mqz5995lyk.ico" type="image/x-icon" />
+<style>h3 {font-weight:bold;}</style>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@recombine_io" />
+<meta name="twitter:creator" content="@john_crowson" />
+<meta property="og:url" content="https://ReCombine.io" />
+<meta property="og:title" content="ReCombine: Simple. Performant. Native." />
+<meta property="og:description" content="A Swift Redux library utilizing Apple's Combine Framework. " />
+<meta property="og:image" content="https://user-images.githubusercontent.com/2394173/73594932-c06db600-44e0-11ea-9794-3af56ee4db88.png" />
+
+  </head>
+  <body>
+    <a title="Concepts + Tutorial  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">ReCombine Docs</a></p>
+        <p class="header-right"><a href="https://github.com/ReCombine/ReCombine"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">ReCombine Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Concepts + Tutorial  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Basics.html">Guide: Basics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="what--why.html">What + Why</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="concepts--tutorial.html">Concepts + Tutorial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="installation.html">Installation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Architecture.html">Guide: Architecture</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="actions.html">Actions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="reducers.html">Reducers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="selectors.html">Selectors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="effects.html">Effects</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Testing.html">Guide: Testing</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="testing.html">Testing</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Example%20Apps.html">Example Apps</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="swiftui-scoreboard.html">SwiftUI Scoreboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="storyboard-scoreboard.html">Storyboard Scoreboard</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Key%20Structures%20and%20Protocols.html">API: Key Structures and Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Store.html">Store</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Effect.html">Effect</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Reducer%20Composition%20Helpers.html">API: Reducer Composition Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine15combineReducersyxx_AA6Action_ptcxx_AaC_ptcd_tlF">combineReducers(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine6forKey_3usexx_AA6Action_ptcs08WritableD4PathCyxq_G_q_q__AaD_ptctr0_lF">forKey(_:use:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Memoized%20Selectors.html">API: Memoized Selectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector__14transformation8memoizedq1_xcq_xc_q0_xcq1_q__q0_tcSbtSQRzSQR_SQR0_r2_lF">createSelector(_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector___14transformation8memoizedq2_xcq_xc_q0_xcq1_xcq2_q__q0_q1_tcSbtSQRzSQR_SQR0_SQR1_r3_lF">createSelector(_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector____14transformation8memoizedq3_xcq_xc_q0_xcq1_xcq2_xcq3_q__q0_q1_q2_tcSbtSQRzSQR_SQR0_SQR1_SQR2_r4_lF">createSelector(_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_____14transformation8memoizedq4_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_q__q0_q1_q2_q3_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_r5_lF">createSelector(_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector______14transformation8memoizedq5_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_q__q0_q1_q2_q3_q4_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_r6_lF">createSelector(_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_______14transformation8memoizedq6_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_q__q0_q1_q2_q3_q4_q5_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_r7_lF">createSelector(_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector________14transformation8memoizedq7_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_q__q0_q1_q2_q3_q4_q5_q6_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_r8_lF">createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_________14transformation8memoizedq8_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_xcq8_q__q0_q1_q2_q3_q4_q5_q6_q7_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_SQR7_r9_lF">createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Custom%20Operators.html">API: Custom Operators</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/AnyPublisher.html">AnyPublisher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Aliases.html">API: Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine9ReducerFna">ReducerFn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h2 id='key-concepts' class='heading'>Key concepts</h2>
+
+<ul>
+<li><a href="./actions.html">Actions</a> describe unique events that are dispatched from views and view models.</li>
+<li>State changes are handled by pure functions called <a href="./reducers.html">reducers</a> that take the current state and the latest action to compute a new state.</li>
+<li><a href="./selectors.html">Selectors</a> are pure functions used to select, derive and compose pieces of state.</li>
+<li>State is accessed with the <code><a href="Classes/Store.html">Store</a></code>, a Publishers of state and a Subscribers of actions.</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>Detailed installation instructions can be found on the <a href="./installation.html">Installation</a> page.</p>
+<h2 id='diagram' class='heading'>Diagram</h2>
+
+<p>The following diagram represents the overall general flow of application state in ReCombine.</p>
+
+<p><img src="https://user-images.githubusercontent.com/3779096/74048166-b4319f00-499f-11ea-86cc-cfab34c1aa6b.png" alt="ReCombine State Management Lifecycle Diagram" width="100%" height="100%" /></p>
+<h2 id='example-application' class='heading'>Example Application</h2>
+
+<p>Want to see a working, fully unit tested project in action?  Check out our <a href="https://github.com/ReCombine/ReCombine-Example-SwiftUI">example application on GitHub</a>.</p>
+<h2 id='tutorial' class='heading'>Tutorial</h2>
+
+<p>The following tutorial shows you how to manage the state of a counter, and how to select and display it within a SwiftUI iOS application.</p>
+
+<p>1)  Generate a new SwiftUI project and install ReCombine.</p>
+
+<p>2)  Create a new file named <code>Counter.swift</code> to describe the counter actions to increment, decrement, and reset its value.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">enum</span> <span class="kt">Counter</span> <span class="p">{</span>
+    <span class="kd">struct</span> <span class="kt">Increment</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+    <span class="kd">struct</span> <span class="kt">Decrement</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+    <span class="kd">struct</span> <span class="kt">Reset</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>3)  Define a state and an associated reducer function to handle changes in the counter value based on the provided actions.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReCombine</span>
+
+<span class="kd">enum</span> <span class="kt">Counter</span> <span class="p">{</span>
+    <span class="kd">struct</span> <span class="kt">Increment</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+    <span class="kd">struct</span> <span class="kt">Decrement</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+    <span class="kd">struct</span> <span class="kt">Reset</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{}</span>
+
+    <span class="kd">struct</span> <span class="kt">State</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+
+    <span class="kd">static</span> <span class="kd">func</span> <span class="nf">reducer</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">State</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">state</span> <span class="o">=</span> <span class="n">state</span>
+        <span class="k">switch</span> <span class="n">action</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="n">_</span> <span class="k">as</span> <span class="kt">Increment</span><span class="p">:</span>
+                <span class="n">state</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">return</span> <span class="n">state</span>
+            <span class="k">case</span> <span class="n">_</span> <span class="k">as</span> <span class="kt">Decrement</span><span class="p">:</span>
+                <span class="n">state</span><span class="o">.</span><span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="k">return</span> <span class="n">state</span>
+            <span class="k">case</span> <span class="n">_</span> <span class="k">as</span> <span class="kt">Reset</span><span class="p">:</span>
+                <span class="n">state</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">return</span> <span class="n">state</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">state</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>4)  In your <code>AppDelegate</code> file or in another standalone file, initialize a <code><a href="Classes/Store.html">Store</a></code> that can be accessed throughout your application.  Create and pass a <code>CounterState</code> object to be used as the initial state.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">store</span> <span class="o">=</span> <span class="kt">Store</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span> <span class="kt">Counter</span><span class="o">.</span><span class="n">reducer</span><span class="p">,</span> <span class="nv">initialState</span><span class="p">:</span> <span class="kt">Counter</span><span class="o">.</span><span class="kt">State</span><span class="p">())</span>
+</code></pre>
+
+<p>5)  Create a  <code>ContentViewModel</code> class to be used as a view model for the generated  <code>ContentView</code>.  Use the globally available <code>store</code> to dispatch the Increment, Decrement, and Reset actions. Use the <code>select</code> operator with a custom <code>getCountString</code>  selector to <em>select</em> the <em>count</em> String from the state.  Use the Combine library&rsquo;s <a href="https://developer.apple.com/documentation/combine/publisher/3235801-assign"><code>assign</code></a> method to automatically assign the latest value from the selector to the <code>ContentViewModel</code>&lsquo;s <code>count</code> property.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Combine</span>
+<span class="kd">import</span> <span class="kt">ReCombine</span>
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+<span class="kd">class</span> <span class="kt">ContentViewModel</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+
+    <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">count</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">cancellableSet</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">AnyCancellable</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">select</span><span class="p">(</span><span class="n">getCountString</span><span class="p">)</span><span class="o">.</span><span class="nf">assign</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">increment</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Counter</span><span class="o">.</span><span class="kt">Increment</span><span class="p">())</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">decrement</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Counter</span><span class="o">.</span><span class="kt">Decrement</span><span class="p">())</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">reset</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Counter</span><span class="o">.</span><span class="kt">Reset</span><span class="p">())</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">getCountString</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">Counter</span><span class="o">.</span><span class="kt">State</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="s">"Current Count: </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">count</span><span class="p">)</span><span class="se">)</span><span class="s">"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>6) Update the <code>ContentView</code> with text for the view model&rsquo;s <code>count</code> string and buttons to call the increment, decrement, and reset methods.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">SwiftUI</span>
+
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@ObservedObject</span> <span class="k">var</span> <span class="nv">viewModel</span> <span class="o">=</span> <span class="kt">ContentViewModel</span><span class="p">()</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="n">viewModel</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+            <span class="kt">HStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">increment</span><span class="p">()</span>
+                <span class="p">})</span> <span class="p">{</span>
+                    <span class="kt">Text</span><span class="p">(</span><span class="s">"Increment"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">decrement</span><span class="p">()</span>
+                <span class="p">})</span> <span class="p">{</span>
+                    <span class="kt">Text</span><span class="p">(</span><span class="s">"Decrement"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">reset</span><span class="p">()</span>
+                <span class="p">})</span> <span class="p">{</span>
+                    <span class="kt">Text</span><span class="p">(</span><span class="s">"Reset"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>And that&rsquo;s it! Click the increment, decrement, and reset buttons to change the state of the counter.</p>
+
+<p>Let&rsquo;s cover what you did:</p>
+
+<ul>
+<li>Defined actions to express events.</li>
+<li>Defined a reducer function to manage the state of the counter.</li>
+<li>Initialize the global state container that is available throughout your application.</li>
+<li>Use the <code><a href="Classes/Store.html">Store</a></code> to dispatch actions and select the current state of the counter.</li>
+</ul>
+<h2 id='next-steps' class='heading'>Next Steps</h2>
+
+<p>Learn about the architecture of an ReCombine application through <a href="./actions.html">actions</a>, <a href="./reducers.html">reducers</a>, and <a href="./selectors.html">selectors</a>.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Documentation modified from <a class="link" href="https://ngrx.io" target="_blank" rel="external">NgRx.io</a> under <a class="link" href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external">CC BY 4.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

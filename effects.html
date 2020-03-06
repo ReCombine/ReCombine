@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Effects  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    <link rel="shortcut icon" href="http://www.iconj.com/ico/m/q/mqz5995lyk.ico" type="image/x-icon" />
+<style>h3 {font-weight:bold;}</style>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@recombine_io" />
+<meta name="twitter:creator" content="@john_crowson" />
+<meta property="og:url" content="https://ReCombine.io" />
+<meta property="og:title" content="ReCombine: Simple. Performant. Native." />
+<meta property="og:description" content="A Swift Redux library utilizing Apple's Combine Framework. " />
+<meta property="og:image" content="https://user-images.githubusercontent.com/2394173/73594932-c06db600-44e0-11ea-9794-3af56ee4db88.png" />
+
+  </head>
+  <body>
+    <a title="Effects  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">ReCombine Docs</a></p>
+        <p class="header-right"><a href="https://github.com/ReCombine/ReCombine"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">ReCombine Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Effects  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Basics.html">Guide: Basics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="what--why.html">What + Why</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="concepts--tutorial.html">Concepts + Tutorial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="installation.html">Installation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Architecture.html">Guide: Architecture</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="actions.html">Actions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="reducers.html">Reducers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="selectors.html">Selectors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="effects.html">Effects</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Testing.html">Guide: Testing</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="testing.html">Testing</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Example%20Apps.html">Example Apps</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="swiftui-scoreboard.html">SwiftUI Scoreboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="storyboard-scoreboard.html">Storyboard Scoreboard</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Key%20Structures%20and%20Protocols.html">API: Key Structures and Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Store.html">Store</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Effect.html">Effect</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Reducer%20Composition%20Helpers.html">API: Reducer Composition Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine15combineReducersyxx_AA6Action_ptcxx_AaC_ptcd_tlF">combineReducers(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine6forKey_3usexx_AA6Action_ptcs08WritableD4PathCyxq_G_q_q__AaD_ptctr0_lF">forKey(_:use:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Memoized%20Selectors.html">API: Memoized Selectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector__14transformation8memoizedq1_xcq_xc_q0_xcq1_q__q0_tcSbtSQRzSQR_SQR0_r2_lF">createSelector(_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector___14transformation8memoizedq2_xcq_xc_q0_xcq1_xcq2_q__q0_q1_tcSbtSQRzSQR_SQR0_SQR1_r3_lF">createSelector(_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector____14transformation8memoizedq3_xcq_xc_q0_xcq1_xcq2_xcq3_q__q0_q1_q2_tcSbtSQRzSQR_SQR0_SQR1_SQR2_r4_lF">createSelector(_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_____14transformation8memoizedq4_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_q__q0_q1_q2_q3_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_r5_lF">createSelector(_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector______14transformation8memoizedq5_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_q__q0_q1_q2_q3_q4_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_r6_lF">createSelector(_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_______14transformation8memoizedq6_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_q__q0_q1_q2_q3_q4_q5_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_r7_lF">createSelector(_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector________14transformation8memoizedq7_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_q__q0_q1_q2_q3_q4_q5_q6_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_r8_lF">createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_________14transformation8memoizedq8_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_xcq8_q__q0_q1_q2_q3_q4_q5_q6_q7_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_SQR7_r9_lF">createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Custom%20Operators.html">API: Custom Operators</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/AnyPublisher.html">AnyPublisher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Aliases.html">API: Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine9ReducerFna">ReducerFn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='effects' class='heading'>Effects</h1>
+
+<p>Effects are a Combine powered side effect model. Effects use streams to provide <a href="https://martinfowler.com/eaaDev/EventSourcing.html">new sources</a> of actions to reduce state based on external interactions such as network requests, web socket messages and time-based events.</p>
+<h2 id='introduction' class='heading'>Introduction</h2>
+
+<p>In many iOS applications, view controllers or their dependencies (view models, data managers) are responsible for interacting with external resources directly. Instead, effects provide a way to interact with those resources and isolate them from the view controllers.</p>
+
+<p>Effects are where you handle tasks such as fetching data, long-running tasks that produce multiple events, and other external interactions where your view controllers don&rsquo;t need explicit knowledge of these interactions.</p>
+<h2 id='key-concepts' class='heading'>Key Concepts</h2>
+
+<ul>
+<li>Effects isolate side effects from view controllers or view models, allowing for more <em>pure</em> view controllers or view models that select state and dispatch actions.</li>
+<li>Effects are long-running Subscribers that listen to a Publisher of <em>every</em> action dispatched from the <a href="guide/store">Store</a>.</li>
+<li>Effects filter those actions based on the type of action they are interested in.</li>
+<li>Effects perform tasks, which are synchronous or asynchronous and return a new action.</li>
+<li>Effect lifecycles can be customized.  Effects registered through the <code><a href="Classes/Store.html">Store</a></code> initializer will process for the lifecycle of the Store instance, while Effects registered through the <code>register(_:)</code> method will process for as long as the returned <code>AnyCancellable</code> is maintained by the caller.</li>
+</ul>
+<h2 id='comparison-with-uiviewcontroller-based-side-effects' class='heading'>Comparison with UIViewController-based side effects</h2>
+
+<p>In many iOS applications, your view controllers or it&rsquo;s dependencies interact with data directly.</p>
+
+<p>Imagine that your application manages message board posts. Here is a view controller that fetches and displays a single post.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">PostDetailsViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">titleLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">bodyLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+
+    <span class="k">var</span> <span class="nv">postId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"1"</span>  <span class="c1">// Pass from another view</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">ServerTrustDelegate</span><span class="p">(),</span> <span class="nv">delegateQueue</span><span class="p">:</span> <span class="o">.</span><span class="n">main</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://jsonplaceholder.typicode.com/posts/</span><span class="se">\(</span><span class="n">postId</span><span class="se">)</span><span class="s">"</span><span class="p">)</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">URLResponse</span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="k">let</span> <span class="nv">post</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Post</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">titleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">title</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">bodyLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">body</span>
+        <span class="p">})</span>
+        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The view controller has multiple responsibilities:</p>
+
+<ul>
+<li>Maintaining the <em>state</em>/outlets for the post.</li>
+<li>Using the <code>URLSession</code> to perform a <em>side effect</em>, reaching out to an external API to fetch the post.</li>
+<li>Changing the <em>state</em>/outlets after the API is complete.</li>
+</ul>
+
+<p><code>Effects</code> when used along with <code><a href="Classes/Store.html">Store</a></code>, decrease the responsibility of view controllers and it&rsquo;s dependencies.  In a larger application, this becomes more important because you have multiple sources of data, with possibly multiple dependencies required to fetch those pieces of data.</p>
+
+<p>Effects handle external data and interactions, allowing your view controllers to be less stateful and only perform tasks related to external interactions. Next, refactor the view controller to put the post detail data in the <code><a href="Classes/Store.html">Store</a></code>. Effects handle the fetching of post data.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">Combine</span>
+
+<span class="kd">class</span> <span class="kt">PostDetailsViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">titleLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">bodyLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+
+    <span class="k">var</span> <span class="nv">postId</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"1"</span>  <span class="c1">// Pass from another view</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">cancellableSet</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">AnyCancellable</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">PostDetailsView</span><span class="o">.</span><span class="kt">GetPost</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="n">postId</span><span class="p">))</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">select</span><span class="p">(</span><span class="n">selectPostDetailsTitle</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">assign</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="n">titleLabel</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">select</span><span class="p">(</span><span class="n">selectPostDetailsBody</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">assign</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="n">bodyLabel</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The post is still fetched through the <code>URLSession</code>, but the view controller is no longer concerned with how the post is fetched and loaded. It&rsquo;s only responsible for declaring its <em>intent</em> to load the post and using selectors to access post data. Effects are where the asynchronous activity of fetching a post happens. Your view controller becomes easier to test and less responsible for the data it needs.</p>
+<h2 id='writing-effects' class='heading'>Writing Effects</h2>
+
+<p>To isolate side-effects from your view controller and it&rsquo;s dependencies, you must create an <code><a href="Structs/Effect.html">Effect</a></code> to listen for events and perform tasks.</p>
+
+<p>Effects are structs with distinct parts:</p>
+
+<ul>
+<li>A closure that receives an  <code><a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a></code> parameter for <em>all</em> actions dispatched <em>after</em> the latest state has been reduced.  The closure must return a <code>Publisher&lt;Action, Never&gt;</code>.</li>
+<li>By default, any action returned from the closure Publisher is then dispatched back to the <code><a href="Classes/Store.html">Store</a></code>.  This can be configured using the <code><a href="Structs/Effect.html">Effect</a></code> <code>dispatch</code> property.</li>
+<li>Actions can be filtered using the <code>ofType(_:)</code> or <code>ofTypes(_:_:)</code> operators. The <code>ofType(_:)</code> operator takes a single action type as an argument to filter on which actions to act upon.  The <code>ofTypes(_:_:)</code> operator can take up to five action types, but will return a generic <code><a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a></code> instead of a specific <code><a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a></code> implementation.</li>
+</ul>
+
+<p>To show how you handle loading a post from the example above, let&rsquo;s look at <code>PostDetailsView.getPostEffect</code>.</p>
+<pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">getPostEffect</span> <span class="o">=</span> <span class="kt">Effect</span><span class="p">(</span><span class="nv">dispatch</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span> <span class="n">actions</span> <span class="k">in</span>
+    <span class="n">actions</span>
+        <span class="o">.</span><span class="nf">ofType</span><span class="p">(</span><span class="kt">GetPost</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">flatMap</span><span class="p">(</span><span class="n">getPostAPI</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">static</span> <span class="kd">func</span> <span class="nf">getPostAPI</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">GetPost</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Action</span><span class="p">,</span> <span class="kt">Never</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://jsonplaceholder.typicode.com/posts/</span><span class="se">\(</span><span class="n">action</span><span class="o">.</span><span class="n">id</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">Just</span><span class="p">(</span><span class="kt">GetPostError</span><span class="p">())</span><span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">ServerTrustDelegate</span><span class="p">(),</span> <span class="nv">delegateQueue</span><span class="p">:</span> <span class="o">.</span><span class="n">main</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="nf">dataTaskPublisher</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">data</span> <span class="p">}</span>
+        <span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">Post</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">JSONDecoder</span><span class="p">())</span>
+        <span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="n">post</span> <span class="k">in</span> <span class="kt">GetPostSuccess</span><span class="p">(</span><span class="nv">post</span><span class="p">:</span> <span class="n">post</span><span class="p">)</span> <span class="p">})</span>
+        <span class="o">.</span><span class="nf">replaceError</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">GetPostError</span><span class="p">())</span>
+        <span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The <code>getPostEffect</code> is listening for all dispatched actions through the <code>actions</code> stream, but is only interested in the <code>GetPost</code> event using the <code>ofType(_:)</code> operator. The stream of actions is then flattened and mapped into a new Publisher using the <code>flatMap</code> operator. The <code>getPostAPI</code> function returns a Publisher that maps the post to a new success action on success, and if an error occurs, maps to a new error action. The action is dispatched to the <code><a href="Classes/Store.html">Store</a></code> where it can be handled by reducers when a state change is needed. Its also important to handle errors when dealing with Publisher streams so that the effects continue running.</p>
+
+<p>Also note that effects have access to properties of the action, as shown above when calling the API endpoint with <code>action.id</code>.</p>
+<h2 id='non-dispatching-effects' class='heading'>Non-dispatching Effects</h2>
+
+<p>Sometimes you don&rsquo;t want effects to dispatch an action, for example when you only want to log or navigate based on an incoming action. But when an effect does not map to a different type of action, the application will crash because the effect is both listening to and dispatching the exact same action over and over again, causing an infinite loop. To prevent this, use <code>dispatch: false</code> in the <code><a href="Structs/Effect.html">Effect</a></code> initializer.</p>
+<pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">deleteEffect</span> <span class="o">=</span> <span class="kt">Effect</span><span class="p">(</span><span class="nv">dispatch</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="n">actions</span> <span class="k">in</span>
+    <span class="n">actions</span>
+        <span class="o">.</span><span class="nf">ofType</span><span class="p">(</span><span class="kt">DeleteDocument</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">handleEvents</span><span class="p">(</span><span class="nv">receiveOutput</span><span class="p">:</span> <span class="p">{</span> <span class="n">action</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="s">"Document </span><span class="se">\(</span><span class="n">action</span><span class="o">.</span><span class="n">id</span><span class="se">)</span><span class="s"> deleted."</span><span class="p">)</span> <span class="p">})</span>
+        <span class="o">.</span><span class="nf">eraseActionType</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>You&rsquo;ll notice the specific <code>DeleteDocument</code> action had to be type erased using <code>eraseActionType()</code> to allow the closure to return a <code>Publisher</code> that satisfies the requirement that <code>Output == Action</code>.</p>
+<h2 id='registering-effects' class='heading'>Registering effects</h2>
+
+<p>After you&rsquo;ve written your Effects, you must register them so the effects start running. </p>
+
+<p>There are two approaches for registering an Effect:</p>
+
+<ol>
+<li>In the Store constructor, creating a permanent, global Effect.</li>
+<li>Using the <code>register(_:)</code> instance method, creating a temporary, locally managed Effect.</li>
+</ol>
+<h3 id='permanent-global-effects' class='heading'>Permanent global effects</h3>
+
+<p>To register effects that will process all actions for the entire lifecycle of the <code><a href="Classes/Store.html">Store</a></code> instance, add them to the <code><a href="Classes/Store.html">Store</a></code> initializer.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">store</span> <span class="o">=</span> <span class="kt">Store</span><span class="p">(</span><span class="nv">reducer</span><span class="p">:</span> <span class="n">reducers</span><span class="p">,</span> <span class="nv">initialState</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">(),</span> <span class="nv">effects</span><span class="p">:</span> <span class="p">[</span><span class="kt">PostDetailsView</span><span class="o">.</span><span class="n">getPostEffect</span><span class="p">])</span>
+</code></pre>
+
+<p>Effects start running immediately to ensure they are listening for all relevant actions.</p>
+<h3 id='temporary-local-effects' class='heading'>Temporary local effects</h3>
+
+<p>To register effects that will process for a specific lifetime and can access local scopes, use the <code>register(_:)</code> method.  See the function-level documentation for details.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">showAlertOnError</span> <span class="o">=</span> <span class="kt">Effect</span><span class="p">(</span><span class="nv">dispatch</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="n">actions</span> <span class="k">in</span>
+    <span class="n">actions</span><span class="o">.</span><span class="nf">ofType</span><span class="p">(</span><span class="kt">GetPostError</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">handleEvents</span><span class="p">(</span><span class="nv">receiveOutput</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">_</span> <span class="k">in</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">showAlert</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">})</span>
+        <span class="o">.</span><span class="nf">eraseActionType</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="nv">effectCancellable</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="n">showAlertOnError</span><span class="p">)</span>
+</code></pre>
+<h2 id='advanced-more-than-five-action-types' class='heading'>Advanced: More than five action types</h2>
+
+<p>As mentioned, <code>ofTypes(_:_:)</code> supports up to five action types.  To whitelist more than the five action types, combine multiple <code>ofTypes</code> operators together using <code>Publishers.Merge()</code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">actionsWhitelist</span> <span class="o">=</span> <span class="kt">Publishers</span><span class="o">.</span><span class="kt">Merge</span><span class="p">(</span>
+    <span class="n">actions</span><span class="o">.</span><span class="nf">ofTypes</span><span class="p">(</span><span class="kt">Action1</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="kt">Action2</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="kt">Action3</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="kt">Action4</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="kt">Action5</span><span class="o">.</span><span class="k">self</span><span class="p">),</span> 
+    <span class="n">actions</span><span class="o">.</span><span class="nf">ofTypes</span><span class="p">(</span><span class="kt">Action6</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="kt">Action7</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="kt">Action8</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Documentation modified from <a class="link" href="https://ngrx.io" target="_blank" rel="external">NgRx.io</a> under <a class="link" href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external">CC BY 4.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

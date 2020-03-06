@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Testing  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    <link rel="shortcut icon" href="http://www.iconj.com/ico/m/q/mqz5995lyk.ico" type="image/x-icon" />
+<style>h3 {font-weight:bold;}</style>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@recombine_io" />
+<meta name="twitter:creator" content="@john_crowson" />
+<meta property="og:url" content="https://ReCombine.io" />
+<meta property="og:title" content="ReCombine: Simple. Performant. Native." />
+<meta property="og:description" content="A Swift Redux library utilizing Apple's Combine Framework. " />
+<meta property="og:image" content="https://user-images.githubusercontent.com/2394173/73594932-c06db600-44e0-11ea-9794-3af56ee4db88.png" />
+
+  </head>
+  <body>
+    <a title="Testing  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">ReCombine Docs</a></p>
+        <p class="header-right"><a href="https://github.com/ReCombine/ReCombine"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">ReCombine Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Testing  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Basics.html">Guide: Basics</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="what--why.html">What + Why</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="concepts--tutorial.html">Concepts + Tutorial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="installation.html">Installation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Architecture.html">Guide: Architecture</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="actions.html">Actions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="reducers.html">Reducers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="selectors.html">Selectors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="effects.html">Effects</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Guide%3A%20Testing.html">Guide: Testing</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="testing.html">Testing</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Example%20Apps.html">Example Apps</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="swiftui-scoreboard.html">SwiftUI Scoreboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="storyboard-scoreboard.html">Storyboard Scoreboard</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Key%20Structures%20and%20Protocols.html">API: Key Structures and Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Store.html">Store</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Key%20Structures%20and%20Protocols.html#/s:9ReCombine6ActionP">Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Effect.html">Effect</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Reducer%20Composition%20Helpers.html">API: Reducer Composition Helpers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine15combineReducersyxx_AA6Action_ptcxx_AaC_ptcd_tlF">combineReducers(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Reducer%20Composition%20Helpers.html#/s:9ReCombine6forKey_3usexx_AA6Action_ptcs08WritableD4PathCyxq_G_q_q__AaD_ptctr0_lF">forKey(_:use:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Memoized%20Selectors.html">API: Memoized Selectors</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_14transformation8memoizedq0_xcq_xc_q0_q_cSbtSQRzSQR_r1_lF">createSelector(_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector__14transformation8memoizedq1_xcq_xc_q0_xcq1_q__q0_tcSbtSQRzSQR_SQR0_r2_lF">createSelector(_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector___14transformation8memoizedq2_xcq_xc_q0_xcq1_xcq2_q__q0_q1_tcSbtSQRzSQR_SQR0_SQR1_r3_lF">createSelector(_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector____14transformation8memoizedq3_xcq_xc_q0_xcq1_xcq2_xcq3_q__q0_q1_q2_tcSbtSQRzSQR_SQR0_SQR1_SQR2_r4_lF">createSelector(_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_____14transformation8memoizedq4_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_q__q0_q1_q2_q3_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_r5_lF">createSelector(_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector______14transformation8memoizedq5_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_q__q0_q1_q2_q3_q4_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_r6_lF">createSelector(_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_______14transformation8memoizedq6_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_q__q0_q1_q2_q3_q4_q5_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_r7_lF">createSelector(_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector________14transformation8memoizedq7_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_q__q0_q1_q2_q3_q4_q5_q6_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_r8_lF">createSelector(_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Memoized%20Selectors.html#/s:9ReCombine14createSelector_________14transformation8memoizedq8_xcq_xc_q0_xcq1_xcq2_xcq3_xcq4_xcq5_xcq6_xcq7_xcq8_q__q0_q1_q2_q3_q4_q5_q6_q7_tcSbtSQRzSQR_SQR0_SQR1_SQR2_SQR3_SQR4_SQR5_SQR6_SQR7_r9_lF">createSelector(_:_:_:_:_:_:_:_:_:transformation:memoized:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Custom%20Operators.html">API: Custom Operators</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/AnyPublisher.html">AnyPublisher</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="API%3A%20Aliases.html">API: Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine9ReducerFna">ReducerFn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="API%3A%20Aliases.html#/s:9ReCombine10SelectorFna">SelectorFn</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='testing' class='heading'>Testing</h1>
+<h2 id='reducers' class='heading'>Reducers</h2>
+
+<p>Reducers are pure functions, which can easily be tested by providing a state and action, and asserting against the resulting state:</p>
+<pre class="highlight swift"><code><span class="c1">// Source:</span>
+<span class="kd">static</span> <span class="kd">func</span> <span class="nf">reducer</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">State</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">action</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">_</span> <span class="k">as</span> <span class="kt">HomeScore</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kt">State</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">home</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">away</span><span class="p">)</span>
+        <span class="k">case</span> <span class="n">_</span> <span class="k">as</span> <span class="kt">AwayScore</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kt">State</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">home</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">away</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">case</span> <span class="n">_</span> <span class="k">as</span> <span class="kt">ResetScore</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kt">State</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">default</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">state</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Tests:</span>
+<span class="k">let</span> <span class="nv">mockState</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">State</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">testReducer_HomeScoreAction_IncrementsHomeState</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">expect</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">State</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="nf">reducer</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="n">mockState</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">HomeScore</span><span class="p">())</span>
+    <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">expect</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">testReducer_AwayScoreAction_IncrementsAwayState</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">expect</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">State</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="nf">reducer</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="n">mockState</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">AwayScore</span><span class="p">())</span>
+    <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">expect</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">testReducer_ResetScoreAction_ResetsState</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">expect</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">State</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="nf">reducer</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="n">mockState</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">ResetScore</span><span class="p">())</span>
+    <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">expect</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='selectors' class='heading'>Selectors</h2>
+
+<p>Selectors are pure functions, which can easily be tested by providing a state, and asserting against the computed value:</p>
+<pre class="highlight swift"><code><span class="c1">// Source:</span>
+<span class="kd">struct</span> <span class="kt">State</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">subtotal</span><span class="p">:</span> <span class="kt">Decimal</span>
+    <span class="k">let</span> <span class="nv">taxRate</span><span class="p">:</span> <span class="kt">Decimal</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">getSubtotal</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">State</span><span class="p">)</span> <span class="k">in</span> <span class="n">state</span><span class="o">.</span><span class="n">subtotal</span> <span class="p">}</span>
+<span class="k">let</span> <span class="nv">getTaxRate</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">State</span><span class="p">)</span> <span class="k">in</span> <span class="n">state</span><span class="o">.</span><span class="n">taxRate</span> <span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">getTotalCost</span> <span class="o">=</span> <span class="nf">createSelector</span><span class="p">(</span>
+    <span class="n">getSubtotal</span><span class="p">,</span>
+    <span class="n">getTaxRate</span><span class="p">,</span>
+    <span class="nv">transformation</span><span class="p">:</span> <span class="p">{</span> <span class="n">subtotal</span><span class="p">,</span> <span class="n">taxRate</span> <span class="o">-&gt;</span> <span class="kt">Decimal</span> <span class="k">in</span>
+        <span class="k">let</span> <span class="nv">total</span> <span class="o">=</span> <span class="n">subtotal</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">taxRate</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">total</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1">// Tests:</span>
+<span class="kd">func</span> <span class="nf">testTotalCostSelector</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">mockState</span> <span class="o">=</span> <span class="kt">State</span><span class="p">(</span><span class="nv">subtotal</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span> <span class="nv">taxRate</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="nf">getTotalCost</span><span class="p">(</span><span class="n">mockState</span><span class="p">)</span>
+    <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="mf">26.25</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='effects' class='heading'>Effects</h2>
+
+<p>Effects can be tested by observing how it&rsquo;s <code>source</code> responds to emitted actions.</p>
+
+<p>The following example Effect calls an API to post scores:</p>
+<pre class="highlight swift"><code><span class="c1">// Effect Definition</span>
+
+<span class="kd">static</span> <span class="k">let</span> <span class="nv">postScore</span> <span class="o">=</span> <span class="kt">Effect</span><span class="p">(</span><span class="nv">dispatch</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span> <span class="n">actions</span> <span class="k">in</span>
+    <span class="n">actions</span>
+        <span class="o">.</span><span class="nf">ofType</span><span class="p">(</span><span class="kt">PostScore</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">flatMap</span><span class="p">(</span><span class="n">getPostAPI</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1">// API Management</span>
+
+<span class="kd">static</span> <span class="k">var</span> <span class="nv">apiManager</span><span class="p">:</span> <span class="kt">ScoreAPIManager</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span>
+
+<span class="kd">static</span> <span class="kd">func</span> <span class="nf">getPostAPI</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">PostScore</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">Action</span><span class="p">,</span> <span class="kt">Never</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">apiManager</span><span class="o">.</span><span class="nf">postScore</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">home</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="n">action</span><span class="o">.</span><span class="n">away</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="n">_</span> <span class="k">in</span> <span class="kt">PostScoreSuccess</span><span class="p">()</span> <span class="p">})</span>
+        <span class="o">.</span><span class="nf">replaceError</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt">PostScoreError</span><span class="p">())</span>
+        <span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">protocol</span> <span class="kt">ScoreAPIManager</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">postScore</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Output</span><span class="p">,</span> <span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Failure</span><span class="o">&gt;</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">URLSession</span><span class="p">:</span> <span class="kt">ScoreAPIManager</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">postScore</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Output</span><span class="p">,</span> <span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Failure</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://jsonplaceholder.typicode.com/posts"</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">urlRequest</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="o">!</span><span class="p">)</span>
+        <span class="n">urlRequest</span><span class="o">.</span><span class="n">httpMethod</span> <span class="o">=</span> <span class="s">"POST"</span>
+        <span class="k">return</span> <span class="nf">dataTaskPublisher</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">urlRequest</span><span class="p">)</span><span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The following tests create a mock ScoreAPIManager (defined above) to assert the results of the Effect based on the API result:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">testPostScoreEffect_OnRequestSuccess_DispatchPostScoreSuccess</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">Scoreboard</span><span class="o">.</span><span class="n">apiManager</span> <span class="o">=</span> <span class="kt">MockSuccessScoreAPIManager</span><span class="p">()</span>
+    <span class="k">let</span> <span class="nv">actions</span> <span class="o">=</span> <span class="kt">PassthroughSubject</span><span class="o">&lt;</span><span class="kt">Action</span><span class="p">,</span> <span class="kt">Never</span><span class="o">&gt;</span><span class="p">()</span>
+
+    <span class="k">let</span> <span class="nv">expectationReceiveAction</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveAction"</span><span class="p">)</span>
+    <span class="n">cancellable</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="n">postScore</span><span class="o">.</span><span class="nf">source</span><span class="p">(</span><span class="n">actions</span><span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">())</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">resultAction</span> <span class="k">in</span>
+        <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">resultAction</span> <span class="k">is</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScoreSuccess</span><span class="p">)</span>
+        <span class="n">expectationReceiveAction</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="n">actions</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScore</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="s">"0"</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="s">"0"</span><span class="p">))</span>
+
+    <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">expectationReceiveAction</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">testPostScoreEffect_OnRequestFailure_DispatchPostScoreSuccess</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">Scoreboard</span><span class="o">.</span><span class="n">apiManager</span> <span class="o">=</span> <span class="kt">MockFailureScoreAPIManager</span><span class="p">()</span>
+    <span class="k">let</span> <span class="nv">actions</span> <span class="o">=</span> <span class="kt">PassthroughSubject</span><span class="o">&lt;</span><span class="kt">Action</span><span class="p">,</span> <span class="kt">Never</span><span class="o">&gt;</span><span class="p">()</span>
+
+    <span class="k">let</span> <span class="nv">expectationReceiveAction</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveAction"</span><span class="p">)</span>
+    <span class="n">cancellable</span> <span class="o">=</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="n">postScore</span><span class="o">.</span><span class="nf">source</span><span class="p">(</span><span class="n">actions</span><span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">())</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">resultAction</span> <span class="k">in</span>
+        <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">resultAction</span> <span class="k">is</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScoreError</span><span class="p">)</span>
+        <span class="n">expectationReceiveAction</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="n">actions</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScore</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="s">"0"</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="s">"0"</span><span class="p">))</span>
+
+    <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">expectationReceiveAction</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// API Mocks</span>
+
+<span class="kd">class</span> <span class="kt">MockSuccessScoreAPIManager</span><span class="p">:</span> <span class="kt">ScoreAPIManager</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">postScore</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Output</span><span class="p">,</span> <span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Failure</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">output</span><span class="p">:</span> <span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Output</span> <span class="o">=</span> <span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">(),</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">URLResponse</span><span class="p">())</span>
+        <span class="k">return</span> <span class="kt">Just</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">.</span><span class="nf">setFailureType</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Failure</span><span class="o">.</span><span class="k">self</span><span class="p">)</span><span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">MockFailureScoreAPIManager</span><span class="p">:</span> <span class="kt">ScoreAPIManager</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">postScore</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Output</span><span class="p">,</span> <span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Failure</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">Fail</span><span class="p">(</span><span class="nv">outputType</span><span class="p">:</span> <span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Output</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="kt">URLSession</span><span class="o">.</span><span class="kt">DataTaskPublisher</span><span class="o">.</span><span class="kt">Failure</span><span class="p">(</span><span class="o">.</span><span class="n">badURL</span><span class="p">))</span><span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='store-dependent-types' class='heading'>Store-dependent types</h2>
+
+<p>Types that depend on a <code><a href="Classes/Store.html">Store</a></code> instance can use <code>MockStore</code> from the <code>ReCombineTest</code> module for unit testing.  See the installation page for how to add the <code>ReCombineTest</code> module.</p>
+
+<p>The following view model is used in the <a href="https://github.com/ReCombine/ReCombine-Example-SwiftUI">example project</a> to show a scoreboard view.</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ScoreboardViewModel</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+    <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">homeScore</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">awayScore</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">showAlert</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">store</span><span class="p">:</span> <span class="kt">Store</span><span class="o">&lt;</span><span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">State</span><span class="o">&gt;</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">cancellableSet</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">AnyCancellable</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">store</span><span class="p">:</span> <span class="kt">Store</span><span class="o">&lt;</span><span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">State</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">appStore</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="n">store</span>
+
+        <span class="c1">// Bind selectors</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">select</span><span class="p">(</span><span class="kt">Scoreboard</span><span class="o">.</span><span class="n">getHomeScoreString</span><span class="p">)</span><span class="o">.</span><span class="nf">assign</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">homeScore</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">select</span><span class="p">(</span><span class="kt">Scoreboard</span><span class="o">.</span><span class="n">getAwayScoreString</span><span class="p">)</span><span class="o">.</span><span class="nf">assign</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="err">\</span><span class="o">.</span><span class="n">awayScore</span><span class="p">,</span> <span class="nv">on</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+
+        <span class="c1">// Register PostScoreSuccess Effect</span>
+        <span class="k">let</span> <span class="nv">showAlert</span> <span class="o">=</span> <span class="kt">Effect</span><span class="p">(</span><span class="nv">dispatch</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span> <span class="n">actions</span> <span class="k">in</span>
+            <span class="n">actions</span><span class="o">.</span><span class="nf">ofType</span><span class="p">(</span><span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScoreSuccess</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">receive</span><span class="p">(</span><span class="nv">on</span><span class="p">:</span> <span class="kt">RunLoop</span><span class="o">.</span><span class="n">main</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">handleEvents</span><span class="p">(</span><span class="nv">receiveOutput</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">_</span> <span class="k">in</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">showAlert</span> <span class="o">=</span> <span class="kc">true</span>
+                <span class="p">})</span>
+                <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">ResetScore</span><span class="p">()</span> <span class="p">}</span>
+                <span class="o">.</span><span class="nf">eraseActionType</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">eraseToAnyPublisher</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="n">showAlert</span><span class="p">)</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">homeScoreTapped</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">HomeScore</span><span class="p">())</span>        
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">awayScoreTapped</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">AwayScore</span><span class="p">())</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">postScoreTapped</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScore</span><span class="p">(</span><span class="nv">home</span><span class="p">:</span> <span class="n">homeScore</span><span class="p">,</span> <span class="nv">away</span><span class="p">:</span> <span class="n">awayScore</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The following test class shows testing property bindings, local effects, and action dispatching functions:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Combine</span>
+<span class="kd">@testable</span> <span class="kd">import</span> <span class="kt">ReCombine_Scoreboard</span>
+<span class="kd">import</span> <span class="kt">ReCombineTest</span>
+<span class="kd">import</span> <span class="kt">XCTest</span>
+
+<span class="kd">class</span> <span class="kt">ScoreboardViewModelTests</span><span class="p">:</span> <span class="kt">XCTestCase</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">mockStore</span><span class="p">:</span> <span class="kt">MockStore</span><span class="o">&lt;</span><span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">State</span><span class="o">&gt;!</span>
+    <span class="k">var</span> <span class="nv">vm</span><span class="p">:</span> <span class="kt">ScoreboardViewModel</span><span class="o">!</span>
+    <span class="k">var</span> <span class="nv">cancellableSet</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">AnyCancellable</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">setUp</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">mockStore</span> <span class="o">=</span> <span class="kt">MockStore</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">State</span><span class="p">())</span>
+        <span class="n">vm</span> <span class="o">=</span> <span class="kt">ScoreboardViewModel</span><span class="p">(</span><span class="nv">store</span><span class="p">:</span> <span class="n">mockStore</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">tearDown</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">cancellableSet</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - Property bindings</span>
+
+    <span class="kd">func</span> <span class="nf">testPropertyBindings</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">expectationReceiveHomeScore</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveHomeScore"</span><span class="p">)</span>
+        <span class="n">vm</span><span class="o">.</span><span class="err">$</span><span class="n">homeScore</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">score</span> <span class="k">in</span>
+            <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="s">"0"</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+            <span class="n">expectationReceiveHomeScore</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+
+        <span class="k">let</span> <span class="nv">expectationReceiveAwayScore</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveAwayScore"</span><span class="p">)</span>
+        <span class="n">vm</span><span class="o">.</span><span class="err">$</span><span class="n">awayScore</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">score</span> <span class="k">in</span>
+            <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="s">"0"</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+            <span class="n">expectationReceiveAwayScore</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+
+        <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">expectationReceiveHomeScore</span><span class="p">,</span> <span class="n">expectationReceiveAwayScore</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - showAlert Effect</span>
+
+    <span class="kd">func</span> <span class="nf">testShowAlert_UpdatesShowAlert_OnPostScoreSuccess</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">expectationReceiveValues</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveValue"</span><span class="p">)</span>
+        <span class="n">vm</span><span class="o">.</span><span class="err">$</span><span class="n">showAlert</span><span class="o">.</span><span class="nf">collect</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">showAlertValues</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">firstAlertValue</span> <span class="o">=</span> <span class="n">showAlertValues</span><span class="o">.</span><span class="n">first</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">secondAlertValue</span> <span class="o">=</span> <span class="n">showAlertValues</span><span class="o">.</span><span class="n">last</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">XCTFail</span><span class="p">()</span> <span class="p">}</span>
+            <span class="kt">XCTAssertFalse</span><span class="p">(</span><span class="n">firstAlertValue</span><span class="p">)</span>
+            <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">secondAlertValue</span><span class="p">)</span>
+            <span class="n">expectationReceiveValues</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+
+        <span class="k">let</span> <span class="nv">expectationReceiveActions</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveAction"</span><span class="p">)</span>
+        <span class="n">mockStore</span><span class="o">.</span><span class="n">dispatchedActions</span><span class="o">.</span><span class="nf">collect</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">actions</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">firstAction</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">first</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">secondAction</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">last</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">XCTFail</span><span class="p">()</span> <span class="p">}</span>
+            <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">firstAction</span> <span class="k">is</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScoreSuccess</span><span class="p">)</span>
+            <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">secondAction</span> <span class="k">is</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">ResetScore</span><span class="p">)</span>
+            <span class="n">expectationReceiveActions</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+
+        <span class="n">mockStore</span><span class="o">.</span><span class="nf">dispatch</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScoreSuccess</span><span class="p">())</span>
+
+        <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">expectationReceiveValues</span><span class="p">,</span> <span class="n">expectationReceiveActions</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - Action dispatching functions</span>
+
+    <span class="kd">func</span> <span class="nf">testHomeScoreTapped_DispatchesHomeScoreAction</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">expectationReceiveAction</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveAction"</span><span class="p">)</span>
+        <span class="n">mockStore</span><span class="o">.</span><span class="n">dispatchedActions</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">action</span> <span class="k">in</span>
+            <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">action</span> <span class="k">is</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">HomeScore</span><span class="p">)</span>
+            <span class="n">expectationReceiveAction</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+
+        <span class="n">vm</span><span class="o">.</span><span class="nf">homeScoreTapped</span><span class="p">()</span>
+
+        <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">expectationReceiveAction</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">testAwayScoreTapped_DispatchesAwayScoreAction</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">expectationReceiveAction</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveAction"</span><span class="p">)</span>
+        <span class="n">mockStore</span><span class="o">.</span><span class="n">dispatchedActions</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">action</span> <span class="k">in</span>
+            <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">action</span> <span class="k">is</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">AwayScore</span><span class="p">)</span>
+            <span class="n">expectationReceiveAction</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+
+        <span class="n">vm</span><span class="o">.</span><span class="nf">awayScoreTapped</span><span class="p">()</span>
+
+        <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">expectationReceiveAction</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">testPostScoreTapped_DispatchesPostScoreAction</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">expectationReceiveAction</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"receiveAction"</span><span class="p">)</span>
+        <span class="n">mockStore</span><span class="o">.</span><span class="n">dispatchedActions</span><span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">action</span> <span class="k">in</span>
+            <span class="kt">XCTAssertTrue</span><span class="p">(</span><span class="n">action</span> <span class="k">is</span> <span class="kt">Scoreboard</span><span class="o">.</span><span class="kt">PostScore</span><span class="p">)</span>
+            <span class="n">expectationReceiveAction</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">store</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">cancellableSet</span><span class="p">)</span>
+
+        <span class="n">vm</span><span class="o">.</span><span class="nf">postScoreTapped</span><span class="p">()</span>
+
+        <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">expectationReceiveAction</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Documentation modified from <a class="link" href="https://ngrx.io" target="_blank" rel="external">NgRx.io</a> under <a class="link" href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external">CC BY 4.0</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
