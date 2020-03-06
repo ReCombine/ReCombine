@@ -24,11 +24,9 @@
 /// ```
 public func combineReducers<S>(_ reducers: ReducerFn<S>...) -> ReducerFn<S> {
     return { (state, action) in
-        var state = state
-        for reducer in reducers {
-            state = reducer(state, action)
+        reducers.reduce(state) { (accumulatedState, reducer) in
+            reducer(accumulatedState, action)
         }
-        return state
     }
 }
 

@@ -106,10 +106,8 @@ open class Store<S>: Publisher {
         actionSubject = PassthroughSubject()
 
         for effect in effects {
-            effect.source(actionSubject.eraseToAnyPublisher())
-                .filter { _ in return effect.dispatch }
-                .sink(receiveValue: { action in self.dispatch(action: action)})
-                .store(in: &cancellableSet)
+            // Effects registered through init are maintained for the lifecycle of the Store.
+            register(effect).store(in: &cancellableSet)
         }
     }
 

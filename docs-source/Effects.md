@@ -14,6 +14,7 @@ Effects are where you handle tasks such as fetching data, long-running tasks tha
 - Effects are long-running Subscribers that listen to a Publisher of _every_ action dispatched from the [Store](guide/store).
 - Effects filter those actions based on the type of action they are interested in.
 - Effects perform tasks, which are synchronous or asynchronous and return a new action.
+- Effect lifecycles can be customized.  Effects registered through the `Store` initializer will process for the lifecycle of the Store instance, while Effects registered through the `register(_:)` method will process for as long as the returned `AnyCancellable` is maintained by the caller.
 
 ## Comparison with UIViewController-based side effects
 
@@ -140,6 +141,10 @@ You'll notice the specific `DeleteDocument` action had to be type erased using `
 ## Registering effects
 
 After you've written your Effects, you must register them so the effects start running. 
+
+There are two approaches for registering an Effect:
+1. In the Store constructor, creating a permanent, global Effect.
+2. Using the `register(_:)` instance method, creating a temporary, locally managed Effect. 
 
 ### Permanent global effects
 
