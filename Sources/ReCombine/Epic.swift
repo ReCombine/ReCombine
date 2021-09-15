@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import CombineExt
 
 /// Configures an Epic from a source function and a dispatch option.
 ///
@@ -17,4 +16,9 @@ public struct Epic<S> {
     public let dispatch: Bool
     /// A closure with takes in a State Publisher , an Action Publisher and returns an Action Publisher
     public let source: (CurrentValueSubject<S, Never>, AnyPublisher<Action, Never>) -> AnyPublisher<Action, Never>
+
+    public init(dispatch: Bool, _ source: @escaping (CurrentValueSubject<S, Never>, AnyPublisher<Action, Never>) -> AnyPublisher<Action, Never>) {
+        self.dispatch = dispatch
+        self.source = source
+    }
 }
