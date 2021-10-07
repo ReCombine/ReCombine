@@ -17,7 +17,23 @@ import Combine
 ///     let post: Post
 /// }
 /// ```
-public protocol Action {}
+public protocol Action : CustomEquatable {}
+
+public protocol CustomEquatable {
+    func isEqualTo(_ other: CustomEquatable) -> Bool
+}
+
+extension CustomEquatable {
+    public func isEqualTo(_ other: CustomEquatable) -> Bool {
+        false
+    }
+}
+
+extension CustomEquatable where Self: Equatable {
+    public func isEqualTo(_ other: CustomEquatable) -> Bool {
+        (other as? Self) == self
+    }
+}
 
 /// A generic representation of a reducer function.
 ///
@@ -153,7 +169,7 @@ open class Store<S>: Publisher {
     open func receive<T>(subscriber: T) where T: Subscriber, Failure == T.Failure, Output == T.Input {
         stateSubject.receive(subscriber: subscriber)
     }
-    
+
     /// Registers an effect that processes from when this function is called until the returned `AnyCancellable` instance in cancelled.
     ///
     /// This can be useful for:
