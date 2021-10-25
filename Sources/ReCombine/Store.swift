@@ -17,7 +17,23 @@ import Combine
 ///     let post: Post
 /// }
 /// ```
-public protocol Action {}
+public protocol Action : CustomEquatable {}
+
+public protocol CustomEquatable {
+    func isEqualTo(_ other: CustomEquatable) -> Bool
+}
+
+extension CustomEquatable {
+    public func isEqualTo(_ other: CustomEquatable) -> Bool {
+        false
+    }
+}
+
+extension CustomEquatable where Self: Equatable {
+    public func isEqualTo(_ other: CustomEquatable) -> Bool {
+        (other as? Self) == self
+    }
+}
 
 /// A generic representation of a reducer function.
 ///
@@ -99,7 +115,7 @@ open class Store<S>: Publisher {
     /// - Parameter reducer: a single reducer function which will handle reducing state for all actions dispatched to the store.
     /// - Parameter initialState: the initial state.  This state will be used by consumers before the first action is dispatched.
     /// - Parameter effects: action based side-effects.  Each `Effect` element is processed for the lifetime of the `Store` instance.
-    public init(reducer: @escaping ReducerFn<S>, initialState: S, effects: [Effect] = []) {
+    public init(reducer: @escaping ReducerFn<S>, initialState: S, effects: [Effect] = [], epics: [Epic<S>] = []) {
         self.reducer = reducer
         state = initialState
         stateSubject = CurrentValueSubject(initialState)
@@ -108,6 +124,11 @@ open class Store<S>: Publisher {
         for effect in effects {
             // Effects registered through init are maintained for the lifecycle of the Store.
             register(effect).store(in: &cancellableSet)
+        }
+
+        for epic in epics {
+            // Effects registered through init are maintained for the lifecycle of the Store.
+            register(epic).store(in: &cancellableSet)
         }
     }
 
@@ -148,7 +169,7 @@ open class Store<S>: Publisher {
     open func receive<T>(subscriber: T) where T: Subscriber, Failure == T.Failure, Output == T.Input {
         stateSubject.receive(subscriber: subscriber)
     }
-    
+
     /// Registers an effect that processes from when this function is called until the returned `AnyCancellable` instance in cancelled.
     ///
     /// This can be useful for:
@@ -180,6 +201,21 @@ open class Store<S>: Publisher {
     open func register(_ effect: Effect) -> AnyCancellable {
         return effect.source(actionSubject.eraseToAnyPublisher())
             .filter { _ in return effect.dispatch }
+            .sink(receiveValue: { [weak self] action in self?.dispatch(action: action) })
+    }
+
+
+    /// Registers an epic that processes from when this function is called until the returned `AnyCancellable` instance in cancelled.
+    ///
+    /// This can be useful for:
+    /// 1. Epics that should not process for the entire lifetime of the `Store` instance.
+    /// 2. Epics that need to capture a particular scope in it's `source` closure.
+    ///
+    /// ```
+    /// - Parameter effect: action based side-effect.  It is processed until the returned `AnyCancellable` instance is cancelled.
+    open func register(_ epic: Epic<S>) -> AnyCancellable {
+        return epic.source(stateSubject, actionSubject.eraseToAnyPublisher())
+            .filter { _ in return epic.dispatch }
             .sink(receiveValue: { [weak self] action in self?.dispatch(action: action) })
     }
 }
